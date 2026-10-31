@@ -1,12 +1,11 @@
-import './App.css'
+import Post from "./components/Post"
 
 function App() {
 
   return (
-    <div className="App">
-      <main>
-        <h1>Website Institucional</h1>
-      </main>
+    <div>
+      <Post text="Post 1"/>
+      <Post text="Post 2"/>
     </div>
   )
 }
