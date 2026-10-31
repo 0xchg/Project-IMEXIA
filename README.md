@@ -155,3 +155,124 @@ identificar corretamente os elementos:
 
 As `keys` devem ser únicas entre os irmãos e não devem ser geradas
 aleatoriamente a cada renderização.
+
+## 4. Estilização
+
+A estilização define a aparência dos componentes: cores, tamanhos, espaçamento,
+fontes, alinhamento e comportamento visual. Em React, o CSS continua a ser
+utilizado, mas as classes são aplicadas através do atributo `className`, e não
+`class`.
+
+### CSS global
+
+Uma forma simples é criar um ficheiro CSS e importá-lo no componente ou no
+ponto de entrada da aplicação:
+
+```tsx
+import './App.css'
+
+function App() {
+  return <h1 className="title">Website IMEXIA</h1>
+}
+```
+
+```css
+.title {
+  color: #124;
+  font-size: 2rem;
+}
+```
+
+Os estilos definidos desta forma podem afetar qualquer elemento que utilize a
+mesma classe. No projeto, [`App.css`](./website-institucional/src/App.css)
+define, por exemplo, a cor de fundo, a cor do texto e a fonte da página.
+
+### Estilos inline
+
+Também é possível passar um objeto JavaScript para a propriedade `style`. Os
+nomes das propriedades CSS usam camelCase:
+
+```tsx
+function Button() {
+  const buttonStyle = {
+    backgroundColor: '#124',
+    color: 'white',
+    padding: '8px 16px',
+  }
+
+  return <button style={buttonStyle}>Enviar</button>
+}
+```
+
+Esta abordagem é útil para valores dinâmicos ou estilos muito específicos, mas
+não substitui o CSS para folhas de estilo maiores. No `style`, propriedades com
+valores numéricos geralmente representam pixels, enquanto outras unidades
+devem ser escritas como strings, como `'1rem'` ou `'50%'`.
+
+### Classes condicionais
+
+Como classes são strings, podem ser escolhidas com base em props ou estado:
+
+```tsx
+type MessageProps = {
+  isError: boolean
+}
+
+function Message({ isError }: MessageProps) {
+  const className = isError ? 'message error' : 'message success'
+
+  return <p className={className}>Operação concluída</p>
+}
+```
+
+Isto permite que a interface reaja a alterações de estado sem duplicar o
+componente:
+
+```css
+.message {
+  padding: 8px;
+}
+
+.error {
+  color: crimson;
+}
+
+.success {
+  color: seagreen;
+}
+```
+
+### CSS Modules
+
+Quando muitos componentes possuem classes com nomes semelhantes, CSS Modules
+ajuda a evitar conflitos. Um ficheiro com o nome `Button.module.css` tem classes
+com escopo local:
+
+```tsx
+import styles from './Button.module.css'
+
+function Button() {
+  return <button className={styles.primary}>Continuar</button>
+}
+```
+
+```css
+.primary {
+  background-color: #124;
+  color: white;
+}
+```
+
+O nome `primary` é transformado num nome único durante a compilação, evitando
+que o estilo de um componente afete acidentalmente outro.
+
+### Boas práticas
+
+- Prefira classes CSS para estilos reutilizáveis e estilos inline para valores
+  realmente dinâmicos.
+- Use nomes de classes descritivos e relacionados à função ou ao componente.
+- Separe estrutura, comportamento e apresentação: JSX organiza a interface,
+  enquanto CSS define a aparência.
+- Organize os estilos por componente à medida que a aplicação cresce.
+- Verifique o comportamento em diferentes tamanhos de ecrã e mantenha contraste
+  suficiente entre texto e fundo.
