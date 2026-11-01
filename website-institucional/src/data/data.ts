@@ -18,6 +18,7 @@ export interface Company {
   servicesHeadline: string
   about: string[]
   mission: string
+  email: string
   phones: string[]
   address: string
 }
@@ -53,6 +54,7 @@ export const company: Company = {
   ],
   mission:
     'Oferecer soluções inovadoras em cada área de atuação, com qualidade, confiança e eficiência em cada operação, porque o sucesso dos nossos clientes é o nosso maior objetivo.',
+  email: 'imexiageral@gmail.com',
   phones: ['+244 921 146 863', '+244 925 670 134'],
   address: 'Av. Talatona, Via C2, Luanda, Angola',
 }
