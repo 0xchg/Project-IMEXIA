@@ -1,9 +1,26 @@
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import Layout from './components/Layout.tsx'
+import About from './pages/About.tsx'
+import Contact from './pages/Contact.tsx'
+import Home from './pages/Home.tsx'
+import Services from './pages/Services.tsx'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'services', element: <Services /> },
+      { path: 'about', element: <About /> },
+      { path: 'contact-us', element: <Contact /> },
+      { path: '*', element: <Navigate to="/" replace /> },
+    ],
+  },
+])
+
 function App() {
-  return (
-    <main className="flex min-h-dvh items-center justify-center bg-neutral-50 px-4">
-      <h1 className="text-4xl font-semibold tracking-tight text-neutral-900">IMEXIA</h1>
-    </main>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
