@@ -7,9 +7,25 @@
   --color-muted: #526077;
   --color-ink: #122542;
   --color-accent: #246fd0;
+  --color-glow: #1ca0d3;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
   --text-display--line-height: 1.1;
+
+  --animate-drift: drift 14s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes drift {
+    to {
+      transform: translate(-20%, 15%) scale(1.25);
+    }
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @utility grid-cards {

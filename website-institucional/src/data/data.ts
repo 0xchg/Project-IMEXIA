@@ -11,7 +11,7 @@ export interface Highlight {
 export interface Company {
   name: string
   tagline: string
-  headline: string
+  headline: string[]
   intro: string
   closing: string
   aboutHeadline: string
@@ -49,7 +49,7 @@ export const labels = {
 export const company: Company = {
   name: 'IMEXIA',
   tagline: 'Ligando pessoas, negócios e oportunidades.',
-  headline: 'Um grupo. Múltiplas soluções. Novas oportunidades.',
+  headline: ['Um grupo.', 'Múltiplas soluções.', 'Novas oportunidades.'],
   intro:
     'Mais do que serviços, entregamos soluções que impulsionam negócios e criam novas possibilidades.',
   closing: 'Juntos, vamos mais longe.',

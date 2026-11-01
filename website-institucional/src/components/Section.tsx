@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Reveal from './Reveal.tsx'
 
 const tones = {
   canvas: 'bg-canvas text-ink',
@@ -16,7 +17,11 @@ interface SectionProps {
 function Section({ title, tone = 'canvas', className = '', children }: SectionProps) {
   return (
     <section className={`px-4 py-12 md:px-6 lg:px-12 ${tones[tone]} ${className}`}>
-      {title && <h2 className="mb-8 text-2xl font-semibold">{title}</h2>}
+      {title && (
+        <Reveal>
+          <h2 className="mb-8 text-2xl font-semibold">{title}</h2>
+        </Reveal>
+      )}
       {children}
     </section>
   )
