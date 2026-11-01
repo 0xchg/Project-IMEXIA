@@ -44,6 +44,8 @@ export const labels = {
   learnMore: 'Saber mais',
   servicesTitle: 'O que fazemos',
   pillarsTitle: 'Os nossos pilares',
+  openMenu: 'Abrir menu',
+  closeMenu: 'Fechar menu',
 }
 
 export const company: Company = {
