@@ -7,4 +7,13 @@
   --color-muted: #526077;
   --color-ink: #122542;
   --color-accent: #246fd0;
+
+  --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
+  --text-display--line-height: 1.1;
+}
+
+@utility grid-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
 }

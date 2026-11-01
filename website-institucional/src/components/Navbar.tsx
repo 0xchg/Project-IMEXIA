@@ -5,7 +5,7 @@ import { company, navItems } from '../data/data.ts'
 function Navbar() {
   return (
     <header className="border-b border-border">
-      <nav className="flex flex-wrap items-center justify-between gap-x-6 px-4 py-2 md:px-6">
+      <nav className="flex flex-wrap items-center justify-between gap-x-6 px-4 py-2 md:px-6 lg:px-12">
         <Link to="/" className="inline-flex min-h-11 items-center">
           <img src={logo} alt={company.name} className="h-8 w-auto" />
         </Link>

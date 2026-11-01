@@ -38,6 +38,14 @@ export const navItems: NavItem[] = [
   { to: '/contact-us', label: 'Contactos' },
 ]
 
+export const labels = {
+  contactCta: 'Fale connosco',
+  servicesCta: 'Ver serviços',
+  learnMore: 'Saber mais',
+  servicesTitle: 'O que fazemos',
+  pillarsTitle: 'Os nossos pilares',
+}
+
 export const company: Company = {
   name: 'IMEXIA',
   tagline: 'Ligando pessoas, negócios e oportunidades.',
