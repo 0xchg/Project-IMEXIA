@@ -1,4 +1,5 @@
 import { company, labels, navItems, services } from '../data/data.ts'
+import { SiInstagram, SiWhatsapp } from '@icons-pack/react-simple-icons'
 import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
@@ -9,9 +10,16 @@ import Reveal from './Reveal.tsx'
 const year = new Date().getFullYear()
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`
 
+const socials = [
+  { label: labels.instagram, href: `https://www.instagram.com/${company.instagram}`, Icon: SiInstagram },
+  { label: labels.whatsapp, href: `https://wa.me/${company.whatsapp.replace(/\D/g, '')}`, Icon: SiWhatsapp },
+]
+
 const footerLink =
   'inline-flex min-h-11 items-center gap-3 transition duration-200 hover:translate-x-1 hover:text-canvas'
 const icon = 'size-4 shrink-0 text-glow'
+const socialLink =
+  'flex size-11 items-center justify-center rounded-full border border-canvas/20 transition duration-200 hover:-translate-y-0.5 hover:border-canvas hover:bg-canvas/10 hover:text-canvas'
 
 interface FooterColumnProps {
   title: string
@@ -41,6 +49,15 @@ function Footer() {
             <img src={logo} alt={company.name} className="h-8 w-auto brightness-0 invert" />
           </Link>
           <p className="max-w-xs">{company.tagline}</p>
+          <ul className="flex gap-2">
+            {socials.map(({ label, href, Icon }) => (
+              <li key={href}>
+                <a href={href} target="_blank" rel="noreferrer" aria-label={label} className={socialLink}>
+                  <Icon aria-hidden="true" title="" size={20} />
+                </a>
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         <FooterColumn title={labels.footerNav} delay={0.08}>
