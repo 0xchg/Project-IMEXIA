@@ -24,12 +24,13 @@ const socialLink =
 interface FooterColumnProps {
   title: string
   delay: number
+  className?: string
   children: ReactNode
 }
 
-function FooterColumn({ title, delay, children }: FooterColumnProps) {
+function FooterColumn({ title, delay, className = '', children }: FooterColumnProps) {
   return (
-    <Reveal delay={delay} className="flex flex-col gap-2">
+    <Reveal delay={delay} className={`flex flex-col gap-2 ${className}`}>
       <h2 className="font-semibold text-canvas">{title}</h2>
       <ul>{children}</ul>
     </Reveal>
@@ -43,8 +44,8 @@ function Footer() {
 
   return (
     <footer className="overflow-hidden bg-ink text-sm text-canvas/70">
-      <div className="grid gap-12 px-4 pt-16 pb-12 md:grid-cols-2 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:px-12">
-        <Reveal className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-12 px-4 pt-16 pb-12 md:grid-cols-3 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:gap-x-12 lg:px-12">
+        <Reveal className="col-span-2 flex flex-col gap-4 md:col-span-3 lg:col-span-1">
           <Link to="/" className="inline-flex min-h-11 w-fit items-center">
             <img src={logo} alt={company.name} className="h-8 w-auto brightness-0 invert" />
           </Link>
@@ -80,7 +81,7 @@ function Footer() {
           ))}
         </FooterColumn>
 
-        <FooterColumn title={labels.footerContact} delay={0.24}>
+        <FooterColumn title={labels.footerContact} delay={0.24} className="col-span-2 md:col-span-1">
           <li>
             <a href={`mailto:${company.email}`} className={footerLink}>
               <Mail aria-hidden="true" className={icon} />
