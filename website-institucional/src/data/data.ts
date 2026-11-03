@@ -46,6 +46,11 @@ export const labels = {
   pillarsTitle: 'Os nossos pilares',
   openMenu: 'Abrir menu',
   closeMenu: 'Fechar menu',
+  footerNav: 'Navegação',
+  footerServices: 'Serviços',
+  footerContact: 'Contactos',
+  rights: 'Todos os direitos reservados.',
+  backToTop: 'Voltar ao topo',
 }
 
 export const company: Company = {
