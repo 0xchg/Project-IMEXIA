@@ -5,7 +5,7 @@ import HighlightGrid from '../components/HighlightGrid.tsx'
 import Marquee from '../components/Marquee.tsx'
 import Reveal from '../components/Reveal.tsx'
 import Section from '../components/Section.tsx'
-import ServiceCard from '../components/ServiceCard.tsx'
+import ServicesShowcase from '../components/ServicesShowcase.tsx'
 import { clients, company, labels, pillars, services } from '../data/data.ts'
 
 function Home() {
@@ -14,17 +14,7 @@ function Home() {
       <Hero />
       <Marquee items={services.map(({ title }) => title)} />
 
-      <Section title={labels.servicesTitle}>
-        <ul className="grid-cards">
-          {services.map((service, index) => (
-            <li key={service.id}>
-              <Reveal delay={index * 0.08} className="h-full">
-                <ServiceCard {...service} />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <ServicesShowcase />
 
       <Section title={labels.pillarsTitle} tone="surface">
         <HighlightGrid items={pillars} />

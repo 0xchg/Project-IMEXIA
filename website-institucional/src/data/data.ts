@@ -1,6 +1,11 @@
 import abaLogo from '../assets/clients/aba.webp'
 import javLogo from '../assets/clients/jav.webp'
 import javilLogo from '../assets/clients/javil.webp'
+import comercioImage from '../assets/services/comercio.webp'
+import construcaoImage from '../assets/services/construcao.webp'
+import logisticaImage from '../assets/services/logistica.webp'
+import softwareImage from '../assets/services/software.webp'
+import viagensImage from '../assets/services/viagens.webp'
 
 export interface NavItem {
   to: string
@@ -40,6 +45,7 @@ export interface Service {
   summary: string
   description: string
   features: Highlight[]
+  image: string
 }
 
 export const navItems: NavItem[] = [
@@ -141,6 +147,7 @@ export const values: Highlight[] = [
 export const services: Service[] = [
   {
     id: 'viagens',
+    image: viagensImage,
     title: 'Agenciamento de Viagens',
     summary: 'Reservas, hospedagem, bilhetes, vistos e pacotes turísticos, tratados num só lugar.',
     description:
@@ -166,6 +173,7 @@ export const services: Service[] = [
   },
   {
     id: 'construcao',
+    image: construcaoImage,
     title: 'Construção Civil',
     summary: 'Empreitada de obras e acabamentos, com qualidade e atenção aos detalhes.',
     description:
@@ -183,6 +191,7 @@ export const services: Service[] = [
   },
   {
     id: 'logistica',
+    image: logisticaImage,
     title: 'Transporte e Logística',
     summary: 'Armazenamento, procurement, aprovisionamento, downstream e importação, com eficiência em toda a cadeia.',
     description:
@@ -212,6 +221,7 @@ export const services: Service[] = [
   },
   {
     id: 'comercio',
+    image: comercioImage,
     title: 'Comércio',
     summary: 'Soluções comerciais que ligam produtos, mercados e pessoas.',
     description:
@@ -233,6 +243,7 @@ export const services: Service[] = [
   },
   {
     id: 'software',
+    image: softwareImage,
     title: 'Desenvolvimento de Software e Sistemas',
     summary: 'Sistemas à medida, aplicações web e mobile, integração, cloud e suporte.',
     description:
