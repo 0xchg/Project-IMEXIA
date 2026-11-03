@@ -104,13 +104,6 @@ function Footer() {
         </FooterColumn>
       </div>
 
-      <p
-        aria-hidden="true"
-        className="pointer-events-none mb-[-8vw] text-center text-[20vw] leading-none font-semibold tracking-tight text-canvas/5 select-none"
-      >
-        {company.name}
-      </p>
-
       <div className="relative flex flex-wrap items-center justify-between gap-x-6 border-t border-canvas/10 bg-ink px-4 py-2 md:px-6 lg:px-12">
         <p>
           © {year} {company.name}. {labels.rights}
