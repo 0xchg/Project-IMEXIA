@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
@@ -8,15 +8,21 @@ import MobileMenu from './MobileMenu.tsx'
 import NavItemLink from './NavItemLink.tsx'
 
 const menuId = 'mobile-menu'
+const hideAfter = 80
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const { scrollY, scrollYProgress } = useScroll()
   // scrollYProgress reports 1 on pages too short to scroll
   const progress = useTransform<number, number>([scrollY, scrollYProgress], ([y, value]) =>
     y > 0 ? value : 0,
   )
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setHidden(latest > (scrollY.getPrevious() ?? 0) && latest > hideAfter)
+  })
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -28,8 +34,11 @@ function Navbar() {
   }
 
   return (
-    <header
+    <motion.header
       onKeyDown={handleKeyDown}
+      onFocus={() => setHidden(false)}
+      animate={{ y: hidden && !menuOpen ? '-100%' : 0 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
       className="sticky top-0 z-50 border-b border-border bg-canvas/90 backdrop-blur-md"
     >
       <nav className="flex items-center justify-between gap-x-6 px-4 py-2 md:px-6 lg:px-12">
@@ -51,12 +60,13 @@ function Navbar() {
         />
         <MobileMenu id={menuId} open={menuOpen} onNavigate={closeMenu} />
       </nav>
+      {/* hangs below the header (+1px for its border), so it lands at the top of the screen when the header hides */}
       <motion.div
         aria-hidden="true"
-        className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-accent"
+        className="absolute inset-x-0 top-[calc(100%+1px)] h-0.5 origin-left bg-accent"
         style={{ scaleX: progress }}
       />
-    </header>
+    </motion.header>
   )
 }
 
