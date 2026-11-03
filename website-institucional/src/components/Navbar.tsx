@@ -21,7 +21,10 @@ function Navbar() {
   )
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    setHidden(latest > (scrollY.getPrevious() ?? 0) && latest > hideAfter)
+    const previous = scrollY.getPrevious() ?? 0
+    // the services showcase glides the page itself; only the visitor scrolling up brings the navbar back
+    if (latest < previous && document.documentElement.dataset.autoscroll) return
+    setHidden(latest > previous && latest > hideAfter)
   })
 
   const closeMenu = () => setMenuOpen(false)
