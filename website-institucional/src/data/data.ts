@@ -1,3 +1,7 @@
+import abaLogo from '../assets/clients/aba.webp'
+import javLogo from '../assets/clients/jav.webp'
+import javilLogo from '../assets/clients/javil.webp'
+
 export interface NavItem {
   to: string
   label: string
@@ -25,6 +29,11 @@ export interface Company {
   address: string
 }
 
+export interface Client {
+  name: string
+  logo: string
+}
+
 export interface Service {
   id: string
   title: string
@@ -46,6 +55,7 @@ export const labels = {
   learnMore: 'Saber mais',
   servicesTitle: 'O que fazemos',
   pillarsTitle: 'Os nossos pilares',
+  clientsTitle: 'Os nossos clientes',
   openMenu: 'Abrir menu',
   closeMenu: 'Fechar menu',
   footerNav: 'Navegação',
@@ -97,6 +107,12 @@ export const pillars: Highlight[] = [
     title: 'Foco no cliente',
     description: 'Entendemos as suas necessidades e criamos soluções que geram valor real e duradouro.',
   },
+]
+
+export const clients: Client[] = [
+  { name: 'ABA Construção e Engenharia', logo: abaLogo },
+  { name: 'JAVIL Comércio & Indústria', logo: javilLogo },
+  { name: 'J.A.V Móveis & Decoração', logo: javLogo },
 ]
 
 export const values: Highlight[] = [
