@@ -1,8 +1,8 @@
 import abaLogo from '../assets/clients/aba.webp'
 import javLogo from '../assets/clients/jav.webp'
 import javilLogo from '../assets/clients/javil.webp'
-import comercioImage from '../assets/services/comercio.webp'
-import construcaoImage from '../assets/services/construcao.webp'
+//import comercioImage from '../assets/services/comercio.webp'
+//import construcaoImage from '../assets/services/construcao.webp'
 import logisticaImage from '../assets/services/logistica.webp'
 import softwareImage from '../assets/services/software.webp'
 import viagensImage from '../assets/services/viagens.webp'
@@ -171,7 +171,7 @@ export const services: Service[] = [
       },
     ],
   },
-  {
+  /* {
     id: 'construcao',
     image: construcaoImage,
     title: 'Construção Civil',
@@ -188,7 +188,7 @@ export const services: Service[] = [
         description: 'Acabamentos cuidados, pensados para valorizar cada espaço.',
       },
     ],
-  },
+  },*/
   {
     id: 'logistica',
     image: logisticaImage,
@@ -219,7 +219,7 @@ export const services: Service[] = [
       },
     ],
   },
-  {
+  /*{
     id: 'comercio',
     image: comercioImage,
     title: 'Comércio',
@@ -240,7 +240,7 @@ export const services: Service[] = [
         description: 'Relações comerciais próximas, que criam novas oportunidades.',
       },
     ],
-  },
+  },*/
   {
     id: 'software',
     image: softwareImage,
