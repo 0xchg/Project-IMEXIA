@@ -164,7 +164,7 @@ export const services: Service[] = [
       },
     ],
   },
-  {
+  /*{
     id: 'construcao',
     title: 'Construção Civil',
     summary: 'Empreitada de obras e acabamentos, com qualidade e atenção aos detalhes.',
@@ -180,7 +180,7 @@ export const services: Service[] = [
         description: 'Acabamentos cuidados, pensados para valorizar cada espaço.',
       },
     ],
-  },
+  },*/
   {
     id: 'logistica',
     title: 'Transporte e Logística',
@@ -210,7 +210,7 @@ export const services: Service[] = [
       },
     ],
   },
-  {
+  /* {
     id: 'comercio',
     title: 'Comércio',
     summary: 'Soluções comerciais que ligam produtos, mercados e pessoas.',
@@ -230,7 +230,7 @@ export const services: Service[] = [
         description: 'Relações comerciais próximas, que criam novas oportunidades.',
       },
     ],
-  },
+  }, */
   {
     id: 'software',
     title: 'Desenvolvimento de Software e Sistemas',
