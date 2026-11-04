@@ -1,6 +1,9 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/sora';
 
 @theme {
+  --font-display: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
+
   --color-canvas: #ffffff;
   --color-surface: #f4f4f2;
   --color-border: #e8e7e5;
