@@ -2,6 +2,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
 import Glows from './Glows.tsx'
+import NetworkCanvas from './NetworkCanvas.tsx'
 import Reveal from './Reveal.tsx'
 import Section from './Section.tsx'
 
@@ -18,6 +19,7 @@ function Hero() {
       className="relative isolate flex min-h-[70dvh] flex-col justify-center overflow-hidden"
     >
       <Glows />
+      <NetworkCanvas />
 
       <motion.div className="flex flex-col gap-6" style={reduceMotion ? undefined : { y, opacity }}>
         <h1 className="max-w-4xl text-display font-semibold">
