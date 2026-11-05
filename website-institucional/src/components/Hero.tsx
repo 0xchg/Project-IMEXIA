@@ -1,6 +1,8 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { company, labels } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
+import Glows from './Glows.tsx'
+import NetworkCanvas from './NetworkCanvas.tsx'
 import Reveal from './Reveal.tsx'
 import Section from './Section.tsx'
 
@@ -9,20 +11,15 @@ function Hero() {
   const y = useTransform(scrollY, [0, 600], [0, 120])
   const opacity = useTransform(scrollY, [0, 500], [1, 0.2])
   const reduceMotion = useReducedMotion()
+  const { company, labels } = useContent()
 
   return (
     <Section
       tone="ink"
       className="relative isolate flex min-h-[70dvh] flex-col justify-center overflow-hidden"
     >
-      <div
-        aria-hidden="true"
-        className="absolute -top-1/2 -right-1/3 -z-10 aspect-square w-full animate-drift bg-[radial-gradient(closest-side,var(--color-accent),transparent)] opacity-60 motion-reduce:animate-none lg:w-2/3"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-1/4 -bottom-1/2 -z-10 aspect-square w-full animate-drift bg-[radial-gradient(closest-side,var(--color-glow),transparent)] opacity-30 [animation-direction:alternate-reverse] motion-reduce:animate-none lg:w-1/2"
-      />
+      <Glows />
+      <NetworkCanvas />
 
       <motion.div className="flex flex-col gap-6" style={reduceMotion ? undefined : { y, opacity }}>
         <h1 className="max-w-4xl text-display font-semibold">

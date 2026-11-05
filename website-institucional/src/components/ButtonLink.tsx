@@ -1,23 +1,19 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-
-const variants = {
-  primary: 'bg-accent text-canvas hover:shadow-lg hover:shadow-accent/40 hover:brightness-90',
-  outline: 'border border-canvas/40 text-canvas hover:border-canvas hover:bg-canvas/10',
-}
+import useContent from '../hooks/useContent.ts'
+import { buttonBase, buttonVariants } from './buttonStyles.ts'
 
 interface ButtonLinkProps {
   to: string
-  variant?: keyof typeof variants
+  variant?: keyof typeof buttonVariants
   children: ReactNode
 }
 
 function ButtonLink({ to, variant = 'primary', children }: ButtonLinkProps) {
+  const { localize } = useContent()
+
   return (
-    <Link
-      to={to}
-      className={`inline-flex min-h-11 items-center rounded-lg px-6 font-semibold transition duration-200 hover:-translate-y-0.5 active:scale-95 ${variants[variant]}`}
-    >
+    <Link to={localize(to)} className={`${buttonBase} ${buttonVariants[variant]}`}>
       {children}
     </Link>
   )

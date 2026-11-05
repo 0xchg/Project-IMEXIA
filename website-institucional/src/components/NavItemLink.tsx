@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { NavLink } from 'react-router-dom'
-import type { NavItem } from '../data/data.ts'
+import type { NavItem } from '../data/types.ts'
+import useContent from '../hooks/useContent.ts'
 
 interface NavItemLinkProps extends NavItem {
   indicator?: boolean
@@ -9,9 +10,13 @@ interface NavItemLinkProps extends NavItem {
 }
 
 function NavItemLink({ to, label, indicator = false, className = '', onClick }: NavItemLinkProps) {
+  const { localize } = useContent()
+
+  // end: the home link (/en) must not stay active on every page below it
   return (
     <NavLink
-      to={to}
+      to={localize(to)}
+      end
       onClick={onClick}
       className={({ isActive }) =>
         `relative min-h-11 items-center transition-colors duration-150 ${className} ${

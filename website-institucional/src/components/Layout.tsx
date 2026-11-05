@@ -1,6 +1,7 @@
 import { motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef } from 'react'
 import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
+import { languageOf } from '../hooks/useContent.ts'
 import Footer from './Footer.tsx'
 import Navbar from './Navbar.tsx'
 
@@ -8,6 +9,12 @@ function Layout() {
   const { pathname, key } = useLocation()
   const mainRef = useRef<HTMLElement>(null)
   const lastKey = useRef(key)
+  const language = languageOf(pathname)
+
+  // screen readers and search engines read the language from <html lang>
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
 
   // move focus off the clicked link on every navigation, so it doesn't keep a focus ring
   useEffect(() => {

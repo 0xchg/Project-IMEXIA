@@ -1,45 +1,38 @@
-import ButtonLink from '../components/ButtonLink.tsx'
 import ClientLogos from '../components/ClientLogos.tsx'
+import ClosingCta from '../components/ClosingCta.tsx'
+import CompanyIntro from '../components/CompanyIntro.tsx'
 import Hero from '../components/Hero.tsx'
+import { pillarIcons } from '../components/highlightIcons.ts'
 import HighlightGrid from '../components/HighlightGrid.tsx'
 import Marquee from '../components/Marquee.tsx'
-import Reveal from '../components/Reveal.tsx'
 import Section from '../components/Section.tsx'
-import ServiceCard from '../components/ServiceCard.tsx'
-import { clients, company, labels, pillars, services } from '../data/data.ts'
+import ServicesShowcase from '../components/ServicesShowcase.tsx'
+import { clients } from '../data/shared.ts'
+import useContent from '../hooks/useContent.ts'
+import useDocumentTitle from '../hooks/useDocumentTitle.ts'
 
 function Home() {
+  const { labels, pillars, services } = useContent()
+  useDocumentTitle()
+
   return (
     <>
       <Hero />
       <Marquee items={services.map(({ title }) => title)} />
 
-      <Section title={labels.servicesTitle}>
-        <ul className="grid-cards">
-          {services.map((service, index) => (
-            <li key={service.id}>
-              <Reveal delay={index * 0.08} className="h-full">
-                <ServiceCard {...service} />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <CompanyIntro />
+
+      <ServicesShowcase />
 
       <Section title={labels.pillarsTitle} tone="surface">
-        <HighlightGrid items={pillars} />
+        <HighlightGrid items={pillars} icons={pillarIcons} />
       </Section>
 
       <Section title={labels.clientsTitle}>
         <ClientLogos clients={clients} />
       </Section>
 
-      <Section tone="surface">
-        <Reveal className="flex flex-wrap items-center justify-between gap-6">
-          <h2 className="text-2xl font-semibold">{company.closing}</h2>
-          <ButtonLink to="/contact-us">{labels.contactCta}</ButtonLink>
-        </Reveal>
-      </Section>
+      <ClosingCta />
     </>
   )
 }

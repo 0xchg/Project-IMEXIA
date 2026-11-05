@@ -2,7 +2,8 @@ import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/rea
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import { company, navItems } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
+import LanguageSwitch from './LanguageSwitch.tsx'
 import MenuToggle from './MenuToggle.tsx'
 import MobileMenu from './MobileMenu.tsx'
 import NavItemLink from './NavItemLink.tsx'
@@ -14,6 +15,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
+  const { company, navItems, localize } = useContent()
   const { scrollY, scrollYProgress } = useScroll()
   // scrollYProgress reports 1 on pages too short to scroll
   const progress = useTransform<number, number>([scrollY, scrollYProgress], ([y, value]) =>
@@ -21,7 +23,10 @@ function Navbar() {
   )
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    setHidden(latest > (scrollY.getPrevious() ?? 0) && latest > hideAfter)
+    const previous = scrollY.getPrevious() ?? 0
+    // the services showcase glides the page itself; only the visitor scrolling up brings the navbar back
+    if (latest < previous && document.documentElement.dataset.autoscroll) return
+    setHidden(latest > previous && latest > hideAfter)
   })
 
   const closeMenu = () => setMenuOpen(false)
@@ -42,22 +47,26 @@ function Navbar() {
       className="sticky top-0 z-50 border-b border-border bg-canvas/90 backdrop-blur-md"
     >
       <nav className="flex items-center justify-between gap-x-6 px-4 py-2 md:px-6 lg:px-12">
-        <Link to="/" onClick={closeMenu} className="inline-flex min-h-11 items-center">
-          <img src={logo} alt={company.name} className="h-8 w-auto" />
+        <Link to={localize('/')} onClick={closeMenu} className="inline-flex min-h-11 min-w-0 items-center">
+          <img src={logo} alt={company.name} className="h-8 w-auto object-contain object-left" />
         </Link>
-        <ul className="hidden gap-2 sm:flex">
-          {navItems.map((item) => (
-            <li key={item.to}>
-              <NavItemLink {...item} indicator className="inline-flex px-2" />
-            </li>
-          ))}
-        </ul>
-        <MenuToggle
-          ref={toggleRef}
-          open={menuOpen}
-          controls={menuId}
-          onClick={() => setMenuOpen((open) => !open)}
-        />
+        <div className="flex items-center gap-2 md:gap-4">
+          <ul className="hidden gap-2 md:flex">
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavItemLink {...item} indicator className="inline-flex px-2" />
+              </li>
+            ))}
+          </ul>
+          <span aria-hidden="true" className="hidden h-5 w-px bg-border md:block" />
+          <LanguageSwitch onSwitch={closeMenu} />
+          <MenuToggle
+            ref={toggleRef}
+            open={menuOpen}
+            controls={menuId}
+            onClick={() => setMenuOpen((open) => !open)}
+          />
+        </div>
         <MobileMenu id={menuId} open={menuOpen} onNavigate={closeMenu} />
       </nav>
       {/* hangs below the header (+1px for its border), so it lands at the top of the screen when the header hides */}

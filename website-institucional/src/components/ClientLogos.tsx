@@ -1,4 +1,4 @@
-import type { Client } from '../data/data.ts'
+import type { Client } from '../data/types.ts'
 import Reveal from './Reveal.tsx'
 
 interface ClientLogosProps {

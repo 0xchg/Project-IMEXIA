@@ -1,5 +1,5 @@
 import type { Ref } from 'react'
-import { labels } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
 
 const bar = 'absolute h-0.5 w-6 rounded-full bg-ink transition duration-200'
 
@@ -11,6 +11,8 @@ interface MenuToggleProps {
 }
 
 function MenuToggle({ ref, open, controls, onClick }: MenuToggleProps) {
+  const { labels } = useContent()
+
   return (
     <button
       ref={ref}
@@ -19,7 +21,7 @@ function MenuToggle({ ref, open, controls, onClick }: MenuToggleProps) {
       aria-expanded={open}
       aria-controls={controls}
       onClick={onClick}
-      className="relative flex size-11 items-center justify-center sm:hidden"
+      className="relative flex size-11 items-center justify-center md:hidden"
     >
       <span className={`${bar} ${open ? 'rotate-45' : '-translate-y-2'}`} />
       <span className={`${bar} ${open ? 'opacity-0' : ''}`} />
