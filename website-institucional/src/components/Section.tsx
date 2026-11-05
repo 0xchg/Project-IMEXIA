@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ComponentProps } from 'react'
 import TextReveal from './TextReveal.tsx'
 
 const tones = {
@@ -7,16 +7,15 @@ const tones = {
   ink: 'bg-ink text-canvas',
 }
 
-interface SectionProps {
+// any other <section> attribute (id, ref, aria-*) passes straight through
+interface SectionProps extends Omit<ComponentProps<'section'>, 'title'> {
   title?: string
   tone?: keyof typeof tones
-  className?: string
-  children: ReactNode
 }
 
-function Section({ title, tone = 'canvas', className = '', children }: SectionProps) {
+function Section({ title, tone = 'canvas', className = '', children, ...rest }: SectionProps) {
   return (
-    <section className={`px-4 py-12 md:px-6 lg:px-12 ${tones[tone]} ${className}`}>
+    <section {...rest} className={`px-4 py-12 md:px-6 lg:px-12 ${tones[tone]} ${className}`}>
       {title && (
         <h2 className="mb-8 text-heading font-semibold">
           <TextReveal>{title}</TextReveal>

@@ -1,8 +1,6 @@
 import abaLogo from '../assets/clients/aba.webp'
 import javLogo from '../assets/clients/jav.webp'
 import javilLogo from '../assets/clients/javil.webp'
-//import comercioImage from '../assets/services/comercio.webp'
-//import construcaoImage from '../assets/services/construcao.webp'
 import logisticaImage from '../assets/services/logistica.webp'
 import softwareImage from '../assets/services/software.webp'
 import viagensImage from '../assets/services/viagens.webp'
@@ -41,9 +39,7 @@ export const clients: Client[] = [
 // sets which services exist and their order; each language file must describe every one
 export const serviceImages = {
   viagens: viagensImage,
-  //construcao: construcaoImage,
   logistica: logisticaImage,
-  //comercio: comercioImage,
   software: softwareImage,
 }
 

@@ -107,22 +107,6 @@ const pt: Translation = {
         },
       ],
     },
-    /*construcao: {
-      title: 'Construção Civil',
-      summary: 'Empreitada de obras e acabamentos, com qualidade e atenção aos detalhes.',
-      description:
-        'Executamos projetos de construção civil com foco na empreitada de obras e nos acabamentos, com a qualidade e a atenção aos detalhes que cada espaço exige.',
-      features: [
-        {
-          title: 'Empreitada de obras',
-          description: 'Execução de obras com rigor, organização e compromisso com o resultado final.',
-        },
-        {
-          title: 'Acabamentos',
-          description: 'Acabamentos cuidados, pensados para valorizar cada espaço.',
-        },
-      ],
-    },*/
     logistica: {
       title: 'Transporte e Logística',
       summary: 'Armazenamento, procurement, aprovisionamento, downstream e importação, com eficiência em toda a cadeia.',
@@ -151,26 +135,6 @@ const pt: Translation = {
         },
       ],
     },
-    /*comercio: {
-      title: 'Comércio',
-      summary: 'Soluções comerciais que ligam produtos, mercados e pessoas.',
-      description:
-        'Ligamos produtos, mercados e pessoas para impulsionar negócios e abrir novas oportunidades.',
-      features: [
-        {
-          title: 'Produtos',
-          description: 'Acesso aos produtos certos para cada necessidade.',
-        },
-        {
-          title: 'Mercados',
-          description: 'Ligação entre negócios em Angola e no mercado global.',
-        },
-        {
-          title: 'Pessoas',
-          description: 'Relações comerciais próximas, que criam novas oportunidades.',
-        },
-      ],
-    },*/
     software: {
       title: 'Desenvolvimento de Software e Sistemas',
       summary: 'Sistemas à medida, aplicações web e mobile, integração, cloud e suporte.',

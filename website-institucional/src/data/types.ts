@@ -86,6 +86,8 @@ export interface Translation {
 export interface Content {
   labels: Labels
   navItems: NavItem[]
+  // page names, as in the navigation
+  pageTitles: Record<Page, string>
   company: Company
   pillars: Highlight[]
   values: Highlight[]
