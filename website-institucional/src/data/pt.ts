@@ -6,6 +6,8 @@ const pt: Translation = {
     servicesCta: 'Ver serviços',
     learnMore: 'Saber mais',
     aboutTitle: 'Quem somos',
+    missionTitle: 'A nossa missão',
+    valuesTitle: 'Os valores que nos movem',
     servicesTitle: 'O que fazemos',
     pillarsTitle: 'Os nossos pilares',
     clientsTitle: 'Os nossos clientes',

@@ -57,6 +57,8 @@ export interface Labels {
   servicesCta: string
   learnMore: string
   aboutTitle: string
+  missionTitle: string
+  valuesTitle: string
   servicesTitle: string
   pillarsTitle: string
   clientsTitle: string
