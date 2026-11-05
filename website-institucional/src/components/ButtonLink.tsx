@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import useContent from '../hooks/useContent.ts'
 
 const variants = {
-  primary: 'bg-accent text-canvas hover:bg-accent-strong hover:shadow-lg hover:shadow-accent/40',
-  outline: 'border border-canvas/40 text-canvas hover:border-canvas hover:bg-canvas/10',
+  primary: 'bg-accent-fill text-on-accent hover:bg-accent-strong hover:shadow-lg hover:shadow-accent-fill/40',
+  outline: 'border border-on-deep/40 text-on-deep hover:border-on-deep hover:bg-on-deep/10',
 }
 
 interface ButtonLinkProps {

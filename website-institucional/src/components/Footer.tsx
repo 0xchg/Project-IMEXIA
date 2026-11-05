@@ -17,10 +17,10 @@ const socials = [
 ] as const
 
 const footerLink =
-  'inline-flex min-h-11 items-center gap-3 py-2 transition duration-200 hover:translate-x-1 hover:text-canvas'
+  'inline-flex min-h-11 items-center gap-3 py-2 transition duration-200 hover:translate-x-1 hover:text-on-deep'
 const icon = 'size-4 shrink-0 text-glow'
 const socialLink =
-  'flex size-11 items-center justify-center rounded-full border border-canvas/20 transition duration-200 hover:-translate-y-0.5 hover:border-canvas hover:bg-canvas/10 hover:text-canvas'
+  'flex size-11 items-center justify-center rounded-full border border-on-deep/20 transition duration-200 hover:-translate-y-0.5 hover:border-on-deep hover:bg-on-deep/10 hover:text-on-deep'
 
 interface FooterColumnProps {
   title: string
@@ -32,7 +32,7 @@ interface FooterColumnProps {
 function FooterColumn({ title, delay, className = '', children }: FooterColumnProps) {
   return (
     <Reveal delay={delay} className={`flex flex-col gap-2 ${className}`}>
-      <h2 className="font-semibold text-canvas">{title}</h2>
+      <h2 className="font-semibold text-on-deep">{title}</h2>
       <ul>{children}</ul>
     </Reveal>
   )
@@ -45,7 +45,7 @@ function Footer() {
   const backToTop = () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
 
   return (
-    <footer className="overflow-hidden border-t border-canvas/10 bg-ink text-sm text-canvas/70">
+    <footer className="overflow-hidden border-t border-on-deep/10 bg-deep text-sm text-on-deep/70">
       <div className="grid grid-cols-2 gap-x-6 gap-y-12 px-4 pt-16 pb-12 md:grid-cols-3 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:gap-x-12 lg:px-12">
         <Reveal className="col-span-2 flex flex-col gap-4 md:col-span-3 lg:col-span-1">
           <Link to={localize('/')} className="inline-flex min-h-11 w-fit items-center">
@@ -107,14 +107,14 @@ function Footer() {
         </FooterColumn>
       </div>
 
-      <div className="relative flex flex-wrap items-center justify-between gap-x-6 border-t border-canvas/10 bg-ink px-4 py-2 md:px-6 lg:px-12">
+      <div className="relative flex flex-wrap items-center justify-between gap-x-6 border-t border-on-deep/10 bg-deep px-4 py-2 md:px-6 lg:px-12">
         <p>
           © {year} {company.name}. {labels.rights}
         </p>
         <button
           type="button"
           onClick={backToTop}
-          className="group inline-flex min-h-11 items-center gap-2 transition-colors duration-150 hover:text-canvas"
+          className="group inline-flex min-h-11 items-center gap-2 transition-colors duration-150 hover:text-on-deep"
         >
           {labels.backToTop}
           <ArrowUp

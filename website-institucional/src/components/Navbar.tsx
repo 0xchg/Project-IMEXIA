@@ -48,7 +48,7 @@ function Navbar() {
     >
       <nav className="flex items-center justify-between gap-x-6 px-4 py-2 md:px-6 lg:px-12">
         <Link to={localize('/')} onClick={closeMenu} className="inline-flex min-h-11 items-center">
-          <img src={logo} alt={company.name} className="h-8 w-auto" />
+          <img src={logo} alt={company.name} className="h-8 w-auto [filter:var(--logo-filter)]" />
         </Link>
         <div className="flex items-center gap-2 sm:gap-4">
           <ul className="hidden gap-2 sm:flex">

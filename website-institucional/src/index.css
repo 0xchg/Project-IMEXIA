@@ -4,15 +4,30 @@
 @theme {
   --font-sans: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
 
-  /* cool neutrals, taken from the navy of the logo */
-  --color-canvas: #ffffff;
-  --color-surface: #f3f6fb;
-  --color-border: #e1e7f0;
-  --color-muted: #526077;
-  --color-ink: #122542;
-  --color-accent: #246fd0;
+  /*
+   * Dark palette. The light one it replaced, to switch back:
+   * canvas #ffffff, surface #f3f6fb, border #e1e7f0, muted #526077, ink #122542,
+   * deep #122542, on-deep #ffffff, paper #ffffff,
+   * accent #246fd0, accent-fill #246fd0, accent-strong #1b5aad, on-accent #ffffff,
+   * and --logo-filter: none below.
+   */
+  --color-canvas: #0b1526;
+  --color-surface: #111f37;
+  --color-border: #1f3050;
+  --color-muted: #9aa9c1;
+  --color-ink: #eef3fa;
+  /* the hero, closing band and footer, with their text */
+  --color-deep: #070f1d;
+  --color-on-deep: #eef3fa;
+  /* a white backing for artwork drawn for light backgrounds (illustrations, client logos) */
+  --color-paper: #ffffff;
+  /* text, icons and indicators; the brand blue reads too dark on navy */
+  --color-accent: #5b9cf0;
+  /* buttons and filled shapes, in the brand blue */
+  --color-accent-fill: #246fd0;
   --color-accent-strong: #1b5aad;
-  /* decoration only: the glows on navy backgrounds */
+  --color-on-accent: #ffffff;
+  /* decoration only: the glows on the deep sections */
   --color-glow: #1ca0d3;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
@@ -40,6 +55,12 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+    /* the navbar logo is navy artwork: white on a dark page */
+    --logo-filter: brightness(0) invert(1);
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;

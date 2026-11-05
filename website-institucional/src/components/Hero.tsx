@@ -14,7 +14,7 @@ function Hero() {
 
   return (
     <Section
-      tone="ink"
+      tone="deep"
       className="relative isolate flex min-h-[70dvh] flex-col justify-center overflow-hidden"
     >
       <Glows />
@@ -35,7 +35,7 @@ function Hero() {
           ))}
         </h1>
         <Reveal delay={0.5}>
-          <p className="max-w-2xl text-canvas/80">{company.intro}</p>
+          <p className="max-w-2xl text-on-deep/80">{company.intro}</p>
         </Reveal>
         <Reveal delay={0.65} className="flex flex-wrap gap-2">
           <ButtonLink to="/contact-us">{labels.contactCta}</ButtonLink>

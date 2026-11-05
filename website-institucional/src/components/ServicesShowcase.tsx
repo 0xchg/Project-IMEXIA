@@ -223,7 +223,7 @@ function ServicesShowcase() {
 
           <div
             aria-live="polite"
-            className="relative min-h-0 w-full flex-1 overflow-hidden rounded-box bg-surface shadow-2xl shadow-ink/10 lg:max-h-160"
+            className="relative min-h-0 w-full flex-1 overflow-hidden rounded-box bg-surface shadow-2xl shadow-deep/60 lg:max-h-160"
           >
             <AnimatePresence initial={false} custom={direction}>
               <motion.article
@@ -236,16 +236,12 @@ function ServicesShowcase() {
                 transition={{ duration: 0.6, ease }}
                 className="absolute inset-0 flex flex-col lg:flex-row-reverse"
               >
-                {/* multiply turns the illustration's white background into the card colour */}
-                <div className="relative h-2/5 shrink-0 bg-surface lg:h-full lg:w-1/2">
+                {/* the illustrations are drawn on white: they sit in a light window inside the card */}
+                <div className="h-2/5 shrink-0 p-2 lg:h-full lg:w-1/2">
                   <img
                     src={service.image}
                     alt=""
-                    className="size-full object-cover object-[78%_center] mix-blend-multiply"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-12 bg-linear-to-t from-surface to-transparent lg:inset-y-0 lg:right-auto lg:h-full lg:w-1/4 lg:bg-linear-to-r"
+                    className="size-full rounded-[calc(var(--radius-box)-0.5rem)] bg-paper object-cover object-[78%_center]"
                   />
                 </div>
                 <div className="flex min-h-0 flex-1 flex-col justify-center gap-3 p-5 md:p-8 lg:gap-5 lg:p-12">
