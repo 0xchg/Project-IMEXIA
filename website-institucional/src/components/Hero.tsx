@@ -1,5 +1,5 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { company, labels } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
 import Reveal from './Reveal.tsx'
 import Section from './Section.tsx'
@@ -9,6 +9,7 @@ function Hero() {
   const y = useTransform(scrollY, [0, 600], [0, 120])
   const opacity = useTransform(scrollY, [0, 500], [1, 0.2])
   const reduceMotion = useReducedMotion()
+  const { company, labels } = useContent()
 
   return (
     <Section

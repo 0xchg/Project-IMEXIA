@@ -1,19 +1,20 @@
-import { company, labels, navItems, services } from '../data/data.ts'
 import { SiInstagram, SiWhatsapp } from '@icons-pack/react-simple-icons'
 import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import { companyInfo } from '../data/shared.ts'
+import useContent from '../hooks/useContent.ts'
 import Reveal from './Reveal.tsx'
 
 const year = new Date().getFullYear()
-const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyInfo.address)}`
 
 const socials = [
-  { label: labels.instagram, href: `https://www.instagram.com/${company.instagram}`, Icon: SiInstagram },
-  { label: labels.whatsapp, href: `https://wa.me/${company.whatsapp.replace(/\D/g, '')}`, Icon: SiWhatsapp },
-]
+  { name: 'instagram', href: `https://www.instagram.com/${companyInfo.instagram}`, Icon: SiInstagram },
+  { name: 'whatsapp', href: `https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}`, Icon: SiWhatsapp },
+] as const
 
 const footerLink =
   'inline-flex min-h-11 items-center gap-3 transition duration-200 hover:translate-x-1 hover:text-canvas'
@@ -39,6 +40,7 @@ function FooterColumn({ title, delay, className = '', children }: FooterColumnPr
 
 function Footer() {
   const reduceMotion = useReducedMotion()
+  const { company, labels, navItems, services, localize } = useContent()
 
   const backToTop = () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
 
@@ -46,14 +48,14 @@ function Footer() {
     <footer className="overflow-hidden bg-ink text-sm text-canvas/70">
       <div className="grid grid-cols-2 gap-x-6 gap-y-12 px-4 pt-16 pb-12 md:grid-cols-3 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:gap-x-12 lg:px-12">
         <Reveal className="col-span-2 flex flex-col gap-4 md:col-span-3 lg:col-span-1">
-          <Link to="/" className="inline-flex min-h-11 w-fit items-center">
+          <Link to={localize('/')} className="inline-flex min-h-11 w-fit items-center">
             <img src={logo} alt={company.name} className="h-8 w-auto brightness-0 invert" />
           </Link>
           <p className="max-w-xs">{company.tagline}</p>
           <ul className="flex gap-2">
-            {socials.map(({ label, href, Icon }) => (
+            {socials.map(({ name, href, Icon }) => (
               <li key={href}>
-                <a href={href} target="_blank" rel="noreferrer" aria-label={label} className={socialLink}>
+                <a href={href} target="_blank" rel="noreferrer" aria-label={labels[name]} className={socialLink}>
                   <Icon aria-hidden="true" title="" size={20} />
                 </a>
               </li>
@@ -64,7 +66,7 @@ function Footer() {
         <FooterColumn title={labels.footerNav} delay={0.08}>
           {navItems.map(({ to, label }) => (
             <li key={to}>
-              <Link to={to} className={footerLink}>
+              <Link to={localize(to)} className={footerLink}>
                 {label}
               </Link>
             </li>
@@ -74,7 +76,7 @@ function Footer() {
         <FooterColumn title={labels.footerServices} delay={0.16}>
           {services.map(({ id, title }) => (
             <li key={id}>
-              <Link to={`/services#${id}`} className={footerLink}>
+              <Link to={localize(`/services#${id}`)} className={footerLink}>
                 {title}
               </Link>
             </li>

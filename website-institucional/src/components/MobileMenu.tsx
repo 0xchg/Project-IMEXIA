@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { navItems } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
 import NavItemLink from './NavItemLink.tsx'
 
 interface MobileMenuProps {
@@ -9,6 +9,8 @@ interface MobileMenuProps {
 }
 
 function MobileMenu({ id, open, onNavigate }: MobileMenuProps) {
+  const { navItems } = useContent()
+
   return (
     <AnimatePresence>
       {open && (

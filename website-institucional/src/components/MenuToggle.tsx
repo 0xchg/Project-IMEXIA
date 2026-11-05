@@ -1,5 +1,5 @@
 import type { Ref } from 'react'
-import { labels } from '../data/data.ts'
+import useContent from '../hooks/useContent.ts'
 
 const bar = 'absolute h-0.5 w-6 rounded-full bg-ink transition duration-200'
 
@@ -11,6 +11,8 @@ interface MenuToggleProps {
 }
 
 function MenuToggle({ ref, open, controls, onClick }: MenuToggleProps) {
+  const { labels } = useContent()
+
   return (
     <button
       ref={ref}

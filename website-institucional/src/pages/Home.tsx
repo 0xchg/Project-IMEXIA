@@ -6,9 +6,12 @@ import Marquee from '../components/Marquee.tsx'
 import Reveal from '../components/Reveal.tsx'
 import Section from '../components/Section.tsx'
 import ServicesShowcase from '../components/ServicesShowcase.tsx'
-import { clients, company, labels, pillars, services } from '../data/data.ts'
+import { clients } from '../data/shared.ts'
+import useContent from '../hooks/useContent.ts'
 
 function Home() {
+  const { company, labels, pillars, services } = useContent()
+
   return (
     <>
       <Hero />

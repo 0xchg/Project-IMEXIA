@@ -8,13 +8,14 @@ import {
   type AnimationPlaybackControls,
 } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { labels, services } from '../data/data.ts'
+import { serviceIds, serviceImages } from '../data/shared.ts'
+import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
 import Reveal from './Reveal.tsx'
 
 // scroll distance each service holds the screen, in viewport heights
 const stepHeight = 0.5
-const lastStep = services.length - 1
+const lastStep = serviceIds.length - 1
 // scroll positions are whole pixels, so a resting point can sit a hair off its step
 const tolerance = 0.02
 const ease = [0.22, 1, 0.36, 1] as const
@@ -56,6 +57,7 @@ function ServicesShowcase() {
   const glideY = useRef(0)
   const [[active, direction], setSlide] = useState([0, 1])
   const reduceMotion = useReducedMotion()
+  const { labels, services } = useContent()
   const { scrollYProgress } = useScroll({ target: trackRef, offset: ['start start', 'end end'] })
 
   const show = (next: number) =>
@@ -102,7 +104,7 @@ function ServicesShowcase() {
   )
 
   useEffect(() => {
-    for (const { image } of services) new Image().src = image
+    for (const image of Object.values(serviceImages)) new Image().src = image
   }, [])
 
   useEffect(() => {

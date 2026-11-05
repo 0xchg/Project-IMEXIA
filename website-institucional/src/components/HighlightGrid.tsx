@@ -1,4 +1,4 @@
-import type { Highlight } from '../data/data.ts'
+import type { Highlight } from '../data/types.ts'
 import Reveal from './Reveal.tsx'
 
 interface HighlightGridProps {
