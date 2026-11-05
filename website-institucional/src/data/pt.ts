@@ -5,6 +5,7 @@ const pt: Translation = {
     contactCta: 'Fale connosco',
     servicesCta: 'Ver serviços',
     learnMore: 'Saber mais',
+    aboutTitle: 'Quem somos',
     servicesTitle: 'O que fazemos',
     pillarsTitle: 'Os nossos pilares',
     clientsTitle: 'Os nossos clientes',

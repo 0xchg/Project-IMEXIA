@@ -1,6 +1,7 @@
 import { HeartHandshake, Network, ShieldCheck, Workflow } from 'lucide-react'
 import ButtonLink from '../components/ButtonLink.tsx'
 import ClientLogos from '../components/ClientLogos.tsx'
+import CompanyIntro from '../components/CompanyIntro.tsx'
 import Glows from '../components/Glows.tsx'
 import Hero from '../components/Hero.tsx'
 import HighlightGrid from '../components/HighlightGrid.tsx'
@@ -21,6 +22,8 @@ function Home() {
     <>
       <Hero />
       <Marquee items={services.map(({ title }) => title)} />
+
+      <CompanyIntro />
 
       <ServicesShowcase />
 

@@ -5,6 +5,7 @@ const en: Translation = {
     contactCta: 'Contact us',
     servicesCta: 'Our services',
     learnMore: 'Learn more',
+    aboutTitle: 'Who we are',
     servicesTitle: 'What we do',
     pillarsTitle: 'Our pillars',
     clientsTitle: 'Our clients',

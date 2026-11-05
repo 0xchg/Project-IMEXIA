@@ -56,6 +56,7 @@ export interface Labels {
   contactCta: string
   servicesCta: string
   learnMore: string
+  aboutTitle: string
   servicesTitle: string
   pillarsTitle: string
   clientsTitle: string
