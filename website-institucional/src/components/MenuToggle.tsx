@@ -21,7 +21,7 @@ function MenuToggle({ ref, open, controls, onClick }: MenuToggleProps) {
       aria-expanded={open}
       aria-controls={controls}
       onClick={onClick}
-      className="relative flex size-11 items-center justify-center sm:hidden"
+      className="relative flex size-11 items-center justify-center md:hidden"
     >
       <span className={`${bar} ${open ? 'rotate-45' : '-translate-y-2'}`} />
       <span className={`${bar} ${open ? 'opacity-0' : ''}`} />

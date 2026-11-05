@@ -47,18 +47,18 @@ function Navbar() {
       className="sticky top-0 z-50 border-b border-border bg-canvas/90 backdrop-blur-md"
     >
       <nav className="flex items-center justify-between gap-x-6 px-4 py-2 md:px-6 lg:px-12">
-        <Link to={localize('/')} onClick={closeMenu} className="inline-flex min-h-11 items-center">
-          <img src={logo} alt={company.name} className="h-8 w-auto" />
+        <Link to={localize('/')} onClick={closeMenu} className="inline-flex min-h-11 min-w-0 items-center">
+          <img src={logo} alt={company.name} className="h-8 w-auto object-contain object-left" />
         </Link>
-        <div className="flex items-center gap-2 sm:gap-4">
-          <ul className="hidden gap-2 sm:flex">
+        <div className="flex items-center gap-2 md:gap-4">
+          <ul className="hidden gap-2 md:flex">
             {navItems.map((item) => (
               <li key={item.to}>
                 <NavItemLink {...item} indicator className="inline-flex px-2" />
               </li>
             ))}
           </ul>
-          <span aria-hidden="true" className="hidden h-5 w-px bg-border sm:block" />
+          <span aria-hidden="true" className="hidden h-5 w-px bg-border md:block" />
           <LanguageSwitch onSwitch={closeMenu} />
           <MenuToggle
             ref={toggleRef}
