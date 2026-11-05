@@ -9,6 +9,7 @@ import Marquee from '../components/Marquee.tsx'
 import Reveal from '../components/Reveal.tsx'
 import Section from '../components/Section.tsx'
 import ServicesShowcase from '../components/ServicesShowcase.tsx'
+import TextReveal from '../components/TextReveal.tsx'
 import { clients } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 
@@ -38,7 +39,9 @@ function Home() {
       <Section tone="ink" className="relative isolate overflow-hidden py-24">
         <Glows />
         <Reveal className="flex flex-wrap items-center justify-between gap-6">
-          <h2 className="text-heading font-semibold">{company.closing}</h2>
+          <h2 className="text-heading font-semibold">
+            <TextReveal>{company.closing}</TextReveal>
+          </h2>
           <ButtonLink to="/contact-us">{labels.contactCta}</ButtonLink>
         </Reveal>
       </Section>

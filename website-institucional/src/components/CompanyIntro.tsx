@@ -4,6 +4,7 @@ import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
 import Reveal from './Reveal.tsx'
 import Section from './Section.tsx'
+import TextReveal from './TextReveal.tsx'
 
 interface WordProps {
   progress: MotionValue<number>
@@ -52,7 +53,9 @@ function CompanyIntro() {
     <Section tone="surface">
       <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
         <Reveal className="flex flex-col gap-4">
-          <h2 className="text-heading font-semibold">{labels.aboutTitle}</h2>
+          <h2 className="text-heading font-semibold">
+            <TextReveal>{labels.aboutTitle}</TextReveal>
+          </h2>
           <p className="text-lg text-muted">{company.aboutHeadline}</p>
         </Reveal>
         <div className="flex flex-col items-start gap-8">
