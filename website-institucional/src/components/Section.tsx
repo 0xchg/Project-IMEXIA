@@ -19,7 +19,7 @@ function Section({ title, tone = 'canvas', className = '', children }: SectionPr
     <section className={`px-4 py-12 md:px-6 lg:px-12 ${tones[tone]} ${className}`}>
       {title && (
         <Reveal>
-          <h2 className="mb-8 text-2xl font-semibold">{title}</h2>
+          <h2 className="mb-8 text-heading font-semibold">{title}</h2>
         </Reveal>
       )}
       {children}
