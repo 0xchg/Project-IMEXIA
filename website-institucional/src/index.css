@@ -14,6 +14,8 @@
   --color-accent-strong: #1b5aad;
   /* decoration only: the glows on navy backgrounds */
   --color-glow: #1ca0d3;
+  /* errors only */
+  --color-danger: #c62828;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
   --text-display--line-height: 1.1;

@@ -4,16 +4,14 @@ import { useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import { companyInfo } from '../data/shared.ts'
+import { contactLinks } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import Reveal from './Reveal.tsx'
 
 const year = new Date().getFullYear()
-const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyInfo.address)}`
-
 const socials = [
-  { name: 'instagram', href: `https://www.instagram.com/${companyInfo.instagram}`, Icon: SiInstagram },
-  { name: 'whatsapp', href: `https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}`, Icon: SiWhatsapp },
+  { name: 'instagram', href: contactLinks.instagram, Icon: SiInstagram },
+  { name: 'whatsapp', href: contactLinks.whatsapp, Icon: SiWhatsapp },
 ] as const
 
 const footerLink =
@@ -85,21 +83,21 @@ function Footer() {
 
         <FooterColumn title={labels.footerContact} delay={0.24} className="col-span-2 md:col-span-1">
           <li>
-            <a href={`mailto:${company.email}`} className={footerLink}>
+            <a href={contactLinks.email} className={footerLink}>
               <Mail aria-hidden="true" className={icon} />
               {company.email}
             </a>
           </li>
           {company.phones.map((phone) => (
             <li key={phone}>
-              <a href={`tel:${phone.replaceAll(' ', '')}`} className={footerLink}>
+              <a href={contactLinks.phone(phone)} className={footerLink}>
                 <Phone aria-hidden="true" className={icon} />
                 {phone}
               </a>
             </li>
           ))}
           <li>
-            <a href={mapUrl} target="_blank" rel="noreferrer" className={footerLink}>
+            <a href={contactLinks.map} target="_blank" rel="noreferrer" className={footerLink}>
               <MapPin aria-hidden="true" className={icon} />
               {company.address}
             </a>

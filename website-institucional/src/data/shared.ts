@@ -30,6 +30,20 @@ export const companyInfo: CompanyInfo = {
   address: 'Av. Talatona, Via C2, Luanda, Angola',
 }
 
+// the exact pin of the office, from the company's own Google Maps link
+const pin = '-8.917924,13.182291'
+
+// where each way of reaching the company leads
+export const contactLinks = {
+  email: `mailto:${companyInfo.email}`,
+  phone: (phone: string) => `tel:${phone.replaceAll(' ', '')}`,
+  whatsapp: `https://wa.me/${companyInfo.whatsapp.replace(/\D/g, '')}`,
+  instagram: `https://www.instagram.com/${companyInfo.instagram}`,
+  map: `https://www.google.com/maps/search/?api=1&query=${pin}`,
+  // embeds without an API key, with the map's own buttons in the page's language
+  mapEmbed: (language: Language) => `https://www.google.com/maps?q=${pin}&hl=${language}&z=17&output=embed`,
+}
+
 export const clients: Client[] = [
   { name: 'ABA Construção e Engenharia', logo: abaLogo },
   { name: 'JAVIL Comércio & Indústria', logo: javilLogo },

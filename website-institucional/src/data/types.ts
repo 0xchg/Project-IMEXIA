@@ -74,9 +74,29 @@ export interface Labels {
   backToTop: string
 }
 
+export interface ContactText {
+  emailLabel: string
+  phoneLabel: string
+  addressLabel: string
+  formTitle: string
+  fields: Record<'name' | 'email' | 'phone' | 'service' | 'message', string>
+  optional: string
+  serviceOther: string
+  errors: Record<'name' | 'email' | 'phone' | 'message', string>
+  submit: string
+  // opens the message sent through WhatsApp
+  greeting: string
+  sent: string
+  blocked: string
+  openWhatsapp: string
+  mapTitle: string
+  openMap: string
+}
+
 // what each language file provides: text only
 export interface Translation {
   labels: Labels
+  contact: ContactText
   nav: Record<Page, string>
   company: CompanyText
   pillars: Highlight[]
@@ -87,6 +107,7 @@ export interface Translation {
 // what the components read: text joined with the shared data
 export interface Content {
   labels: Labels
+  contact: ContactText
   navItems: NavItem[]
   // page names, as in the navigation
   pageTitles: Record<Page, string>
