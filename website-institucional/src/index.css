@@ -2,18 +2,26 @@
 @import '@fontsource-variable/sora';
 
 @theme {
-  --font-display: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
 
+  /* cool neutrals, taken from the navy of the logo */
   --color-canvas: #ffffff;
-  --color-surface: #f4f4f2;
-  --color-border: #e8e7e5;
+  --color-surface: #f3f6fb;
+  --color-border: #e1e7f0;
   --color-muted: #526077;
   --color-ink: #122542;
   --color-accent: #246fd0;
+  --color-accent-strong: #1b5aad;
+  /* decoration only: the glows on navy backgrounds */
   --color-glow: #1ca0d3;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
   --text-display--line-height: 1.1;
+  --text-heading: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --text-heading--line-height: 1.2;
+
+  /* one corner radius for cards and buttons */
+  --radius-box: 1rem;
 
   --animate-drift: drift 14s ease-in-out infinite alternate;
   --animate-marquee: marquee 40s linear infinite;

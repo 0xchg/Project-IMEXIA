@@ -216,14 +216,14 @@ function ServicesShowcase() {
       <div ref={trackRef} style={{ height: `${100 + lastStep * stepHeight * 100}svh` }}>
         <div className="sticky top-0 mx-auto flex h-svh max-w-6xl flex-col justify-center gap-4 pt-16 pb-2">
           <Reveal>
-            <h2 id="services-title" className="text-2xl font-semibold">
+            <h2 id="services-title" className="text-heading font-semibold">
               {labels.servicesTitle}
             </h2>
           </Reveal>
 
           <div
             aria-live="polite"
-            className="relative min-h-0 w-full flex-1 overflow-hidden rounded-3xl bg-surface shadow-2xl ring-1 shadow-ink/10 ring-border lg:max-h-160"
+            className="relative min-h-0 w-full flex-1 overflow-hidden rounded-box bg-surface shadow-2xl shadow-ink/10 lg:max-h-160"
           >
             <AnimatePresence initial={false} custom={direction}>
               <motion.article
@@ -236,8 +236,13 @@ function ServicesShowcase() {
                 transition={{ duration: 0.6, ease }}
                 className="absolute inset-0 flex flex-col lg:flex-row-reverse"
               >
-                <div className="relative h-2/5 shrink-0 lg:h-full lg:w-1/2">
-                  <img src={service.image} alt="" className="size-full object-cover object-[78%_center]" />
+                {/* multiply turns the illustration's white background into the card colour */}
+                <div className="relative h-2/5 shrink-0 bg-surface lg:h-full lg:w-1/2">
+                  <img
+                    src={service.image}
+                    alt=""
+                    className="size-full object-cover object-[78%_center] mix-blend-multiply"
+                  />
                   <div
                     aria-hidden="true"
                     className="absolute inset-x-0 bottom-0 h-12 bg-linear-to-t from-surface to-transparent lg:inset-y-0 lg:right-auto lg:h-full lg:w-1/4 lg:bg-linear-to-r"
@@ -245,7 +250,7 @@ function ServicesShowcase() {
                 </div>
                 <div className="flex min-h-0 flex-1 flex-col justify-center gap-3 p-5 md:p-8 lg:gap-5 lg:p-12">
                   <span aria-hidden="true" className="h-1 w-12 rounded-full bg-linear-to-r from-accent to-glow" />
-                  <h3 className="font-display text-2xl leading-tight font-semibold text-balance md:text-4xl">
+                  <h3 className="text-2xl leading-tight font-semibold text-balance md:text-4xl">
                     {service.title}
                   </h3>
                   <p className="text-sm text-muted md:text-base">{service.description}</p>
