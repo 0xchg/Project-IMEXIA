@@ -20,7 +20,6 @@ function Home() {
     <>
       <Hero />
       <StrengthsStrip />
-      <Marquee items={services.map(({ title }) => title)} />
 
       <CompanyIntro />
 
