@@ -3,7 +3,7 @@ import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo-dark.webp'
 import { contactLinks } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import Reveal from './Reveal.tsx'
@@ -47,7 +47,7 @@ function Footer() {
       <div className="grid grid-cols-2 gap-x-6 gap-y-12 px-4 pt-16 pb-12 md:grid-cols-3 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:gap-x-12 lg:px-12">
         <Reveal className="col-span-2 flex flex-col gap-4 md:col-span-3 lg:col-span-1">
           <Link to={localize('/')} className="inline-flex min-h-11 w-fit items-center">
-            <img src={logo} alt={company.name} className="h-8 w-auto brightness-0 invert" />
+            <img src={logo} alt={company.name} className="h-8 w-auto" />
           </Link>
           <p className="max-w-xs">{company.tagline}</p>
           <ul className="flex gap-2">

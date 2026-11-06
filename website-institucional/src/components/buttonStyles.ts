@@ -5,4 +5,4 @@ export const buttonVariants = {
 }
 
 export const buttonBase =
-  'inline-flex min-h-11 items-center gap-2 rounded-box px-6 font-semibold transition duration-200 hover:-translate-y-0.5 active:scale-95'
+  'group inline-flex min-h-11 items-center gap-2 rounded-box px-6 text-sm font-semibold tracking-wide uppercase transition duration-200 hover:-translate-y-0.5 active:scale-95'

@@ -19,8 +19,8 @@ function NavItemLink({ to, label, indicator = false, className = '', onClick }: 
       end
       onClick={onClick}
       className={({ isActive }) =>
-        `relative min-h-11 items-center transition-colors duration-150 ${className} ${
-          isActive ? 'font-semibold text-accent' : 'text-muted hover:text-ink'
+        `relative min-h-11 items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-150 ${className} ${
+          isActive ? 'text-accent' : 'text-ink/80 hover:text-ink'
         }`
       }
     >

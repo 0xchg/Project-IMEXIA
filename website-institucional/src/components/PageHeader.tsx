@@ -16,7 +16,7 @@ function PageHeader({ title, headline, children }: PageHeaderProps) {
     <Section tone="deep" className="relative isolate overflow-hidden pt-20 pb-16">
       <Glows />
       <div className="flex flex-col gap-4">
-        <h1 className="text-display font-semibold">
+        <h1 className="text-display font-extrabold">
           <TextReveal>{title}</TextReveal>
         </h1>
         <Reveal delay={0.2}>

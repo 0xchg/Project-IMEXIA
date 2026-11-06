@@ -6,6 +6,7 @@ import { pillarIcons } from '../components/highlightIcons.ts'
 import HighlightGrid from '../components/HighlightGrid.tsx'
 import Marquee from '../components/Marquee.tsx'
 import Section from '../components/Section.tsx'
+import StrengthsStrip from '../components/StrengthsStrip.tsx'
 import ServicesShowcase from '../components/ServicesShowcase.tsx'
 import { clients } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
@@ -18,6 +19,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <StrengthsStrip />
       <Marquee items={services.map(({ title }) => title)} />
 
       <CompanyIntro />
