@@ -18,7 +18,7 @@ function SolutionsPanel() {
             <Reveal
               key={id}
               delay={index * 0.08}
-              className="rounded-box border border-accent/15 bg-surface/60 p-4 backdrop-blur-sm md:p-6"
+              className="glass rounded-box p-4 md:p-6"
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
                 <h3 className="flex items-center gap-3 text-sm font-semibold tracking-wide uppercase">

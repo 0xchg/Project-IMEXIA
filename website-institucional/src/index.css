@@ -80,6 +80,13 @@
   }
 }
 
+/* the references' frosted panels: a faint blue edge over translucent navy */
+@utility glass {
+  border: 1px solid color-mix(in oklab, var(--color-accent) 15%, transparent);
+  background-color: color-mix(in oklab, var(--color-surface) 60%, transparent);
+  backdrop-filter: blur(8px);
+}
+
 @utility grid-cards {
   display: grid;
   gap: 1rem;

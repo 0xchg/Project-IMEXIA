@@ -38,7 +38,7 @@ function Contact() {
             title={contact.mapTitle}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="block h-80 w-full rounded-box border border-border lg:h-112"
+            className="block h-80 w-full rounded-box border border-accent/20 lg:h-112"
           />
           <a
             href={contactLinks.map}
