@@ -11,7 +11,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { serviceIds, serviceImages } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
-import Reveal from './Reveal.tsx'
+import TextReveal from './TextReveal.tsx'
 
 // scroll distance each service holds the screen, in viewport heights
 const stepHeight = 0.5
@@ -215,11 +215,9 @@ function ServicesShowcase() {
     <section aria-labelledby="services-title" className="px-4 md:px-6 lg:px-12">
       <div ref={trackRef} style={{ height: `${100 + lastStep * stepHeight * 100}svh` }}>
         <div className="sticky top-0 mx-auto flex h-svh max-w-6xl flex-col justify-center gap-4 pt-16 pb-2">
-          <Reveal>
-            <h2 id="services-title" className="text-heading font-semibold">
-              {labels.servicesTitle}
-            </h2>
-          </Reveal>
+          <h2 id="services-title" className="text-heading font-semibold">
+            <TextReveal>{labels.servicesTitle}</TextReveal>
+          </h2>
 
           <div
             aria-live="polite"

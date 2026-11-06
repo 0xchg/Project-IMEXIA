@@ -8,7 +8,7 @@
    * Dark palette. The light one it replaced, to switch back:
    * canvas #ffffff, surface #f3f6fb, border #e1e7f0, muted #526077, ink #122542,
    * deep #122542, on-deep #ffffff, paper #ffffff,
-   * accent #246fd0, accent-fill #246fd0, accent-strong #1b5aad, on-accent #ffffff,
+   * accent #246fd0, accent-fill #246fd0, accent-strong #1b5aad, on-accent #ffffff, danger #c62828,
    * and --logo-filter: none below.
    */
   --color-canvas: #0b1526;
@@ -29,6 +29,8 @@
   --color-on-accent: #ffffff;
   /* decoration only: the glows on the deep sections */
   --color-glow: #1ca0d3;
+  /* errors only; light enough to read on navy */
+  --color-danger: #f87171;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
   --text-display--line-height: 1.1;

@@ -5,6 +5,9 @@ const en: Translation = {
     contactCta: 'Contact us',
     servicesCta: 'Our services',
     learnMore: 'Learn more',
+    aboutTitle: 'Who we are',
+    missionTitle: 'Our mission',
+    valuesTitle: 'The values that drive us',
     servicesTitle: 'What we do',
     pillarsTitle: 'Our pillars',
     clientsTitle: 'Our clients',
@@ -18,6 +21,34 @@ const en: Translation = {
     whatsapp: 'WhatsApp',
     rights: 'All rights reserved.',
     backToTop: 'Back to top',
+  },
+  contact: {
+    emailLabel: 'Email',
+    phoneLabel: 'Phone',
+    addressLabel: 'Address',
+    formTitle: 'Send us a message',
+    fields: {
+      name: 'Name',
+      email: 'Email',
+      phone: 'Phone',
+      service: 'Service of interest',
+      message: 'Message',
+    },
+    optional: 'optional',
+    serviceOther: 'Something else',
+    errors: {
+      name: 'Please enter your name.',
+      email: 'Please enter a valid email address.',
+      phone: 'Please enter a valid phone number.',
+      message: 'Please write your message.',
+    },
+    submit: 'Send via WhatsApp',
+    greeting: 'Hello, IMEXIA!',
+    sent: 'WhatsApp is open with your message. Just press send.',
+    blocked: 'Your browser didn’t let WhatsApp open.',
+    openWhatsapp: 'Open WhatsApp',
+    mapTitle: 'Where to find us',
+    openMap: 'Open in Google Maps',
   },
   nav: {
     home: 'Home',
@@ -106,22 +137,6 @@ const en: Translation = {
         },
       ],
     },
-    /*construcao: {
-      title: 'Civil Construction',
-      summary: 'Construction contracting and finishing work, with quality and attention to detail.',
-      description:
-        'We carry out civil construction projects focused on building contracts and finishing work, with the quality and attention to detail that every space demands.',
-      features: [
-        {
-          title: 'Construction contracting',
-          description: 'Building work carried out with rigour, organisation and commitment to the final result.',
-        },
-        {
-          title: 'Finishing work',
-          description: 'Carefully executed finishes, designed to enhance every space.',
-        },
-      ],
-    },*/
     logistica: {
       title: 'Transport and Logistics',
       summary: 'Warehousing, procurement, supply, downstream and imports, with efficiency across the whole chain.',
@@ -150,26 +165,6 @@ const en: Translation = {
         },
       ],
     },
-    /*comercio: {
-      title: 'Trade',
-      summary: 'Commercial solutions that connect products, markets and people.',
-      description:
-        'We connect products, markets and people to drive business and open up new opportunities.',
-      features: [
-        {
-          title: 'Products',
-          description: 'Access to the right products for every need.',
-        },
-        {
-          title: 'Markets',
-          description: 'Connecting businesses in Angola with the global market.',
-        },
-        {
-          title: 'People',
-          description: 'Close business relationships that create new opportunities.',
-        },
-      ],
-    },*/
     software: {
       title: 'Software and Systems Development',
       summary: 'Custom systems, web and mobile apps, integration, cloud and support.',

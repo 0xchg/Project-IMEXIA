@@ -7,6 +7,7 @@ import type { Content, Page, Translation } from './types.ts'
 const build = ({ nav, company, services, ...text }: Translation): Content => ({
   ...text,
   navItems: (Object.keys(navPaths) as Page[]).map((page) => ({ to: navPaths[page], label: nav[page] })),
+  pageTitles: nav,
   company: { ...companyInfo, ...company },
   services: serviceIds.map((id) => ({ id, image: serviceImages[id], ...services[id] })),
 })
