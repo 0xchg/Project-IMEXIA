@@ -4,23 +4,42 @@
 @theme {
   --font-sans: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
 
-  /* cool neutrals, taken from the navy of the logo */
-  --color-canvas: #ffffff;
-  --color-surface: #f3f6fb;
-  --color-border: #e1e7f0;
-  --color-muted: #526077;
-  --color-ink: #122542;
-  --color-accent: #246fd0;
-  --color-accent-strong: #1b5aad;
-  /* decoration only: the glows on navy backgrounds */
-  --color-glow: #1ca0d3;
-  /* errors only */
-  --color-danger: #c62828;
+  /*
+   * Dark palette, sampled from the redesign references (deep navy, vivid blue, cyan).
+   * The light one it replaced, to switch back:
+   * canvas #ffffff, surface #f3f6fb, border #e1e7f0, muted #526077, ink #122542,
+   * deep #122542, on-deep #ffffff, paper #ffffff,
+   * accent #246fd0, accent-fill #246fd0, accent-strong #1b5aad, on-accent #ffffff, danger #c62828,
+   * and --logo-filter: none below.
+   */
+  --color-canvas: #04173a;
+  --color-surface: #0a2350;
+  --color-border: #1b3a6b;
+  --color-muted: #a3b5d3;
+  --color-ink: #eef4ff;
+  /* the hero, closing band and footer, with their text */
+  --color-deep: #020d1f;
+  --color-on-deep: #eef4ff;
+  /* a white backing for artwork drawn for light backgrounds (illustrations, client logos) */
+  --color-paper: #ffffff;
+  /* text, icons and indicators: the vivid blue of the headlines */
+  --color-accent: #1ea7ef;
+  /* buttons and filled shapes */
+  --color-accent-fill: #075cd4;
+  --color-accent-strong: #0a4fb3;
+  --color-on-accent: #ffffff;
+  /* the cyan of the references: glows, network lines and icons */
+  --color-glow: #14d1f6;
+  /* errors only; light enough to read on navy */
+  --color-danger: #ff8a80;
 
   --text-display: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
   --text-display--line-height: 1.1;
   --text-heading: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
   --text-heading--line-height: 1.2;
+  /* the service banners' titles: big, yet "DESENVOLVIMENTO" still fits a 360px screen */
+  --text-banner: clamp(1.75rem, 1.1rem + 2.6vw, 3.25rem);
+  --text-banner--line-height: 1.1;
 
   /* one corner radius for cards and buttons */
   --radius-box: 1rem;
@@ -42,10 +61,30 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+    /* the client logos are drawn for white backgrounds: white silhouettes on a dark page */
+    --logo-filter: brightness(0) invert(1);
+  }
+
+  /* the redesign sets every page and section title in capitals */
+  h1,
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;
   }
+}
+
+/* the references' frosted panels: a faint blue edge over translucent navy */
+@utility glass {
+  border: 1px solid color-mix(in oklab, var(--color-accent) 15%, transparent);
+  background-color: color-mix(in oklab, var(--color-surface) 60%, transparent);
+  backdrop-filter: blur(8px);
 }
 
 @utility grid-cards {

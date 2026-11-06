@@ -49,17 +49,22 @@ export interface ServiceText {
 
 export interface Service extends ServiceText {
   id: ServiceId
-  image: string
+  photo?: string
 }
 
 export interface Labels {
   contactCta: string
   servicesCta: string
   learnMore: string
+  aboutCta: string
+  heroLabel: string
+  pauseSlides: string
+  playSlides: string
+  strengthsCta: string
   aboutTitle: string
   missionTitle: string
   valuesTitle: string
-  servicesTitle: string
+  solutionsTitle: string
   pillarsTitle: string
   clientsTitle: string
   openMenu: string
@@ -93,10 +98,21 @@ export interface ContactText {
   openMap: string
 }
 
+// one hero slide per area: the headline in two tones, a line of text and four strengths
+export interface HeroSlide {
+  lead: string
+  highlight: string
+  text: string
+  strengths: string[]
+}
+
 // what each language file provides: text only
 export interface Translation {
   labels: Labels
   contact: ContactText
+  hero: Record<ServiceId, HeroSlide>
+  // the group's strengths, in the band under the hero
+  strengths: Highlight[]
   nav: Record<Page, string>
   company: CompanyText
   pillars: Highlight[]
@@ -108,6 +124,8 @@ export interface Translation {
 export interface Content {
   labels: Labels
   contact: ContactText
+  hero: Record<ServiceId, HeroSlide>
+  strengths: Highlight[]
   navItems: NavItem[]
   // page names, as in the navigation
   pageTitles: Record<Page, string>

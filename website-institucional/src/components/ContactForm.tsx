@@ -16,7 +16,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const order = ['name', 'email', 'phone', 'message'] as const
 
 const control =
-  'min-h-11 w-full rounded-box border border-border bg-canvas px-4 py-3 text-base text-ink transition-colors duration-150 focus:border-accent aria-invalid:border-danger'
+  'min-h-11 w-full rounded-box border border-border bg-deep/60 px-4 py-3 text-base text-ink transition-colors duration-150 focus:border-accent aria-invalid:border-danger'
 
 interface FieldProps {
   id: string
@@ -109,7 +109,7 @@ function ContactForm() {
   }
 
   return (
-    <form noValidate onSubmit={submit} className="flex flex-col gap-6 rounded-box bg-surface p-6 md:p-8">
+    <form noValidate onSubmit={submit} className="glass flex flex-col gap-6 rounded-box p-6 md:p-8">
       <h2 className="text-2xl font-semibold">{contact.formTitle}</h2>
 
       <div className="grid gap-4 md:grid-cols-2">

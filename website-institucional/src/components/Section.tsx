@@ -4,7 +4,7 @@ import TextReveal from './TextReveal.tsx'
 const tones = {
   canvas: 'bg-canvas text-ink',
   surface: 'bg-surface text-ink',
-  ink: 'bg-ink text-canvas',
+  deep: 'bg-deep text-on-deep',
 }
 
 // any other <section> attribute (id, ref, aria-*) passes straight through

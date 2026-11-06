@@ -45,7 +45,7 @@ function About() {
           </h2>
           <Reveal>
             <blockquote className="flex flex-col gap-4">
-              <Quote aria-hidden="true" className="size-10 text-accent" />
+              <Quote aria-hidden="true" className="size-10 text-glow" strokeWidth={1.5} />
               <p className="text-2xl leading-snug font-semibold text-balance md:text-3xl">{company.mission}</p>
             </blockquote>
           </Reveal>

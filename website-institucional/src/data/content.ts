@@ -1,6 +1,6 @@
 import en from './en.ts'
 import pt from './pt.ts'
-import { companyInfo, navPaths, serviceIds, serviceImages, type Language } from './shared.ts'
+import { companyInfo, navPaths, serviceIds, servicePhotos, type Language } from './shared.ts'
 import type { Content, Page, Translation } from './types.ts'
 
 // joins a language's text with the data every language shares
@@ -9,7 +9,7 @@ const build = ({ nav, company, services, ...text }: Translation): Content => ({
   navItems: (Object.keys(navPaths) as Page[]).map((page) => ({ to: navPaths[page], label: nav[page] })),
   pageTitles: nav,
   company: { ...companyInfo, ...company },
-  services: serviceIds.map((id) => ({ id, image: serviceImages[id], ...services[id] })),
+  services: serviceIds.map((id) => ({ id, photo: servicePhotos[id], ...services[id] })),
 })
 
 export const content: Record<Language, Content> = {

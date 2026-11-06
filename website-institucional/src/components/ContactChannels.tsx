@@ -14,7 +14,7 @@ interface Channel {
   external?: boolean
 }
 
-const icon = 'size-5'
+const icon = 'size-7'
 
 // every way to reach the company, each one a card that acts straight away
 function ContactChannels() {
@@ -59,16 +59,16 @@ function ContactChannels() {
             <a
               href={href}
               {...(external && { target: '_blank', rel: 'noreferrer' })}
-              className="group flex h-full items-center gap-4 rounded-box border border-border bg-canvas p-4 transition duration-200 hover:-translate-y-0.5 hover:border-accent/40"
+              className="glass group flex h-full items-center gap-4 rounded-box p-4 transition duration-200 hover:-translate-y-0.5 hover:border-accent/50"
             >
               <span
                 aria-hidden="true"
-                className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors duration-200 group-hover:bg-accent group-hover:text-canvas"
+                className="flex size-12 shrink-0 items-center justify-center text-glow transition-transform duration-200 group-hover:scale-110"
               >
                 {icon}
               </span>
               <span className="flex min-w-0 flex-col">
-                <span className="text-sm text-muted">{label}</span>
+                <span className="text-xs font-semibold tracking-wide text-accent uppercase">{label}</span>
                 <span className="font-semibold break-words">{value}</span>
               </span>
             </a>

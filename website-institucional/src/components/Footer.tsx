@@ -3,7 +3,7 @@ import { ArrowUp, Mail, MapPin, Phone } from 'lucide-react'
 import { useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo-dark.webp'
 import { contactLinks } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import Reveal from './Reveal.tsx'
@@ -15,10 +15,10 @@ const socials = [
 ] as const
 
 const footerLink =
-  'inline-flex min-h-11 items-center gap-3 py-2 transition duration-200 hover:translate-x-1 hover:text-canvas'
+  'inline-flex min-h-11 items-center gap-3 py-2 transition duration-200 hover:translate-x-1 hover:text-on-deep'
 const icon = 'size-4 shrink-0 text-glow'
 const socialLink =
-  'flex size-11 items-center justify-center rounded-full border border-canvas/20 transition duration-200 hover:-translate-y-0.5 hover:border-canvas hover:bg-canvas/10 hover:text-canvas'
+  'flex size-11 items-center justify-center rounded-full border border-accent/30 text-glow transition duration-200 hover:-translate-y-0.5 hover:border-glow hover:bg-glow/10'
 
 interface FooterColumnProps {
   title: string
@@ -30,7 +30,7 @@ interface FooterColumnProps {
 function FooterColumn({ title, delay, className = '', children }: FooterColumnProps) {
   return (
     <Reveal delay={delay} className={`flex flex-col gap-2 ${className}`}>
-      <h2 className="font-semibold text-canvas">{title}</h2>
+      <h2 className="text-sm font-semibold tracking-wide text-accent">{title}</h2>
       <ul>{children}</ul>
     </Reveal>
   )
@@ -43,11 +43,13 @@ function Footer() {
   const backToTop = () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
 
   return (
-    <footer className="overflow-hidden border-t border-canvas/10 bg-ink text-sm text-canvas/70">
+    <footer className="relative overflow-hidden bg-deep text-sm text-on-deep/70">
+      {/* the glowing rule of the references, instead of a plain border */}
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-glow/60 to-transparent" />
       <div className="grid grid-cols-2 gap-x-6 gap-y-12 px-4 pt-16 pb-12 md:grid-cols-3 md:px-6 lg:grid-cols-[2fr_1fr_1.25fr_1.5fr] lg:gap-x-12 lg:px-12">
         <Reveal className="col-span-2 flex flex-col gap-4 md:col-span-3 lg:col-span-1">
           <Link to={localize('/')} className="inline-flex min-h-11 w-fit items-center">
-            <img src={logo} alt={company.name} className="h-8 w-auto brightness-0 invert" />
+            <img src={logo} alt={company.name} className="h-8 w-auto" />
           </Link>
           <p className="max-w-xs">{company.tagline}</p>
           <ul className="flex gap-2">
@@ -105,14 +107,14 @@ function Footer() {
         </FooterColumn>
       </div>
 
-      <div className="relative flex flex-wrap items-center justify-between gap-x-6 border-t border-canvas/10 bg-ink px-4 py-2 md:px-6 lg:px-12">
+      <div className="relative flex flex-wrap items-center justify-between gap-x-6 border-t border-on-deep/10 bg-deep px-4 py-2 md:px-6 lg:px-12">
         <p>
           © {year} {company.name}. {labels.rights}
         </p>
         <button
           type="button"
           onClick={backToTop}
-          className="group inline-flex min-h-11 items-center gap-2 transition-colors duration-150 hover:text-canvas"
+          className="group inline-flex min-h-11 items-center gap-2 transition-colors duration-150 hover:text-on-deep"
         >
           {labels.backToTop}
           <ArrowUp

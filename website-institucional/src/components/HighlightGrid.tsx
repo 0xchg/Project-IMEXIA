@@ -8,23 +8,28 @@ interface HighlightGridProps {
   icons?: LucideIcon[]
 }
 
+// a frosted panel split by hairlines, one cell per item, as in the references
 function HighlightGrid({ items, icons = [] }: HighlightGridProps) {
   return (
-    <ul className="grid-cards">
+    <ul
+      className={`grid gap-px overflow-hidden rounded-box border border-accent/15 bg-border/60 sm:grid-cols-2 ${
+        items.length % 5 === 0 ? 'lg:grid-cols-5' : 'lg:grid-cols-4'
+      }`}
+    >
       {items.map(({ title, description }, index) => {
         const Icon = icons[index]
         return (
-          <li key={title}>
-            <Reveal delay={index * 0.08} className="h-full">
-              <div className="group flex h-full flex-col gap-4 rounded-box border border-border bg-canvas p-6 transition duration-200 hover:-translate-y-1 hover:border-accent/40">
-                {Icon && (
-                  <span className="flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-colors duration-200 group-hover:bg-accent group-hover:text-canvas">
-                    <Icon aria-hidden="true" className="size-6" />
-                  </span>
-                )}
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <p className="text-muted">{description}</p>
-              </div>
+          <li key={title} className="group bg-surface/90 transition-colors duration-200 hover:bg-surface/70">
+            <Reveal delay={index * 0.08} className="flex h-full flex-col gap-3 p-6">
+              {Icon && (
+                <Icon
+                  aria-hidden="true"
+                  className="size-9 text-glow transition-transform duration-200 group-hover:-translate-y-0.5"
+                  strokeWidth={1.5}
+                />
+              )}
+              <h3 className="text-sm font-semibold tracking-wide uppercase">{title}</h3>
+              <p className="text-sm text-muted">{description}</p>
             </Reveal>
           </li>
         )

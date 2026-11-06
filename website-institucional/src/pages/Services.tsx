@@ -16,7 +16,7 @@ function Services() {
       </PageHeader>
 
       {services.map((service, index) => (
-        <ServiceDetail key={service.id} service={service} flipped={index % 2 === 1} />
+        <ServiceDetail key={service.id} service={service} tinted={index % 2 === 1} />
       ))}
 
       <ClosingCta />

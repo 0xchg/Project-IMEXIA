@@ -29,16 +29,16 @@ function ServiceShortcuts({ services }: ServiceShortcutsProps) {
             <a
               href={`#${id}`}
               onClick={(event) => jump(event, id)}
-              className="group flex h-full flex-col gap-2 rounded-box border border-canvas/15 bg-canvas/5 p-5 transition duration-200 hover:-translate-y-1 hover:border-canvas/40 hover:bg-canvas/10"
+              className="group flex h-full flex-col gap-2 rounded-box border border-on-deep/15 bg-on-deep/5 p-5 transition duration-200 hover:-translate-y-1 hover:border-on-deep/40 hover:bg-on-deep/10"
             >
-              <span className="flex items-center justify-between gap-4 font-semibold text-canvas">
+              <span className="flex items-center justify-between gap-4 font-semibold text-on-deep">
                 {title}
                 <ArrowDown
                   aria-hidden="true"
                   className="size-4 shrink-0 text-glow transition-transform duration-200 group-hover:translate-y-1"
                 />
               </span>
-              <span className="text-sm text-canvas/70">{summary}</span>
+              <span className="text-sm text-on-deep/70">{summary}</span>
             </a>
           </Reveal>
         </li>

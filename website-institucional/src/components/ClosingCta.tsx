@@ -10,7 +10,7 @@ function ClosingCta() {
   const { company, labels } = useContent()
 
   return (
-    <Section tone="ink" className="relative isolate overflow-hidden py-24">
+    <Section tone="deep" className="relative isolate overflow-hidden py-24">
       <Glows />
       <Reveal className="flex flex-wrap items-center justify-between gap-6">
         <h2 className="text-heading font-semibold">

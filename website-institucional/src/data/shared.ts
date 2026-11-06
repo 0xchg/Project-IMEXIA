@@ -1,9 +1,8 @@
 import abaLogo from '../assets/clients/aba.webp'
 import javLogo from '../assets/clients/jav.webp'
 import javilLogo from '../assets/clients/javil.webp'
-import logisticaImage from '../assets/services/logistica.webp'
-import softwareImage from '../assets/services/software.webp'
-import viagensImage from '../assets/services/viagens.webp'
+import logisticaPhoto from '../assets/photos/logistica.webp'
+import softwarePhoto from '../assets/photos/software.webp'
 import type { Client, CompanyInfo } from './types.ts'
 
 // Portuguese lives at the root, every other language under its own prefix
@@ -50,13 +49,13 @@ export const clients: Client[] = [
   { name: 'J.A.V Móveis & Decoração', logo: javLogo },
 ]
 
-// sets which services exist and their order; each language file must describe every one
-export const serviceImages = {
-  viagens: viagensImage,
-  logistica: logisticaImage,
-  software: softwareImage,
+// the group's areas, in the order every page lists them; each language file must describe every one
+export const serviceIds = ['logistica', 'software', 'viagens'] as const
+
+export type ServiceId = (typeof serviceIds)[number]
+
+// optional: an area without a photo gets drawn artwork instead; a photo added here shows in the hero and on the services page
+export const servicePhotos: Partial<Record<ServiceId, string>> = {
+  logistica: logisticaPhoto,
+  software: softwarePhoto,
 }
-
-export type ServiceId = keyof typeof serviceImages
-
-export const serviceIds = Object.keys(serviceImages) as ServiceId[]

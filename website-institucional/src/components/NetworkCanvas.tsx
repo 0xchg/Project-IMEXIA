@@ -30,7 +30,7 @@ function NetworkCanvas() {
     const context = canvas?.getContext('2d')
     if (!canvas || !context) return
 
-    const line = readColor('--color-canvas', '#ffffff')
+    const line = readColor('--color-on-deep', '#ffffff')
     const dot = readColor('--color-glow', '#1ca0d3')
     let width = 0
     let height = 0

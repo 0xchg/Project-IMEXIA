@@ -5,10 +5,15 @@ const en: Translation = {
     contactCta: 'Contact us',
     servicesCta: 'Our services',
     learnMore: 'Learn more',
+    aboutCta: 'About us',
+    heroLabel: 'Areas of activity',
+    pauseSlides: 'Pause the slideshow',
+    playSlides: 'Resume the slideshow',
+    strengthsCta: 'Let’s turn possibilities into reality.',
     aboutTitle: 'Who we are',
     missionTitle: 'Our mission',
     valuesTitle: 'The values that drive us',
-    servicesTitle: 'What we do',
+    solutionsTitle: 'Our solutions',
     pillarsTitle: 'Our pillars',
     clientsTitle: 'Our clients',
     openMenu: 'Open menu',
@@ -50,6 +55,32 @@ const en: Translation = {
     mapTitle: 'Where to find us',
     openMap: 'Open in Google Maps',
   },
+  hero: {
+    logistica: {
+      lead: 'We connect destinations.',
+      highlight: 'We deliver trust.',
+      text: 'Integrated solutions in transport, logistics, supply and energy that drive businesses forward and create value.',
+      strengths: ['International reach', 'Safety and trust', 'Efficiency and quality', 'Specialised team'],
+    },
+    software: {
+      lead: 'Technology',
+      highlight: 'that connects and transforms.',
+      text: 'Innovative technology solutions that connect people, processes and opportunities, driving businesses forward and creating value.',
+      strengths: ['Innovation', 'Connectivity', 'Security', 'Results'],
+    },
+    viagens: {
+      lead: 'More than travel,',
+      highlight: 'we connect you to the world.',
+      text: 'Bookings, accommodation, tickets, visas and holiday packages, handled in one place with dedicated support.',
+      strengths: ['All in one place', 'Dedicated support', 'Hassle-free', 'Tailor-made packages'],
+    },
+  },
+  strengths: [
+    { title: 'Proven experience', description: 'Years of experience in the market.' },
+    { title: 'Strategic partnerships', description: 'A solid network of global partners.' },
+    { title: 'Technology and innovation', description: 'Smart solutions for real results.' },
+    { title: 'Commitment to the future', description: 'Sustainability and responsibility.' },
+  ],
   nav: {
     home: 'Home',
     services: 'Services',
@@ -139,13 +170,29 @@ const en: Translation = {
     },
     logistica: {
       title: 'Transport and Logistics',
-      summary: 'Warehousing, procurement, supply, downstream and imports, with efficiency across the whole chain.',
+      summary: 'Road, sea and air transport, warehousing, supply, downstream and imports, with efficiency across the whole chain.',
       description:
-        'We integrate the different stages of the logistics chain to ensure efficiency from the start to the end of every operation.',
+        'Integrated logistics solutions for road, sea and air transport, with efficiency, safety and global reach. We bring the stages of the chain together to ensure efficiency from the start to the end of every operation.',
       features: [
         {
-          title: 'Warehousing',
-          description: 'Goods stored and organised securely.',
+          title: 'Road transport',
+          description: 'Efficient and safe solutions across the country.',
+        },
+        {
+          title: 'Sea transport',
+          description: 'We connect ports and people safely.',
+        },
+        {
+          title: 'Air transport',
+          description: 'Speed and agility to connect your business to the world.',
+        },
+        {
+          title: 'Warehousing and distribution',
+          description: 'Goods stored, organised and distributed safely and with technology.',
+        },
+        {
+          title: 'Integrated logistics',
+          description: 'Complete, tailored solutions for your supply chain.',
         },
         {
           title: 'Procurement',
@@ -153,15 +200,19 @@ const en: Translation = {
         },
         {
           title: 'Supply',
-          description: 'Materials and products available when your operation needs them.',
+          description: 'Strategic supply management, with materials available when your operation needs them.',
         },
         {
           title: 'Downstream',
-          description: 'Support for the final stages of the chain, until the product reaches its destination.',
+          description: 'Solutions in petroleum products and lubricants, all the way to the final destination.',
         },
         {
           title: 'Imports',
           description: 'Bringing goods into the country, with the whole process followed closely.',
+        },
+        {
+          title: 'Tracking and security',
+          description: 'Real-time monitoring for the full security of your cargo.',
         },
       ],
     },
