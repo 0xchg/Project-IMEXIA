@@ -4,16 +4,15 @@ import CompanyIntro from '../components/CompanyIntro.tsx'
 import Hero from '../components/Hero.tsx'
 import { pillarIcons } from '../components/highlightIcons.ts'
 import HighlightGrid from '../components/HighlightGrid.tsx'
-import Marquee from '../components/Marquee.tsx'
 import Section from '../components/Section.tsx'
 import StrengthsStrip from '../components/StrengthsStrip.tsx'
-import ServicesShowcase from '../components/ServicesShowcase.tsx'
+import SolutionsPanel from '../components/SolutionsPanel.tsx'
 import { clients } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import useDocumentTitle from '../hooks/useDocumentTitle.ts'
 
 function Home() {
-  const { labels, pillars, services } = useContent()
+  const { labels, pillars } = useContent()
   useDocumentTitle()
 
   return (
@@ -23,7 +22,7 @@ function Home() {
 
       <CompanyIntro />
 
-      <ServicesShowcase />
+      <SolutionsPanel />
 
       <Section title={labels.pillarsTitle} tone="surface">
         <HighlightGrid items={pillars} icons={pillarIcons} />

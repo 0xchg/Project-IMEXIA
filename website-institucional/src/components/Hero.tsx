@@ -9,7 +9,7 @@ import {
   useTransform,
 } from 'motion/react'
 import { useRef, useState, type FocusEvent } from 'react'
-import { heroAreas, heroPhotos } from '../data/shared.ts'
+import { serviceIds } from '../data/shared.ts'
 import useContent from '../hooks/useContent.ts'
 import ButtonLink from './ButtonLink.tsx'
 import Glows from './Glows.tsx'
@@ -49,7 +49,7 @@ function Hero() {
     const next = progress.get() + delta / slideDuration
     if (next < 1) return progress.set(next)
     progress.set(0)
-    setActive((index) => (index + 1) % heroAreas.length)
+    setActive((index) => (index + 1) % serviceIds.length)
   })
 
   const select = (index: number) => {
@@ -66,12 +66,12 @@ function Hero() {
     if (!event.currentTarget.contains(event.relatedTarget)) setHeld(false)
   }
 
-  const areas = heroAreas.map((id) => ({
-    id,
-    slide: hero[id],
-    service: services.find((service) => service.id === id),
-    photo: heroPhotos[id],
-    Icon: areaIcons[id],
+  const areas = services.map((service) => ({
+    id: service.id,
+    slide: hero[service.id],
+    service,
+    photo: service.photo,
+    Icon: areaIcons[service.id],
   }))
 
   return (
@@ -190,8 +190,8 @@ function Hero() {
                 >
                   <Icon aria-hidden="true" className="size-6 shrink-0 text-glow" strokeWidth={1.5} />
                   <span className="flex flex-col gap-1">
-                    <span className="text-sm font-semibold tracking-wide uppercase">{service?.title}</span>
-                    <span className="hidden text-sm text-on-deep/70 md:block">{service?.summary}</span>
+                    <span className="text-sm font-semibold tracking-wide uppercase">{service.title}</span>
+                    <span className="hidden text-sm text-on-deep/70 md:block">{service.summary}</span>
                   </span>
                   {index === active && (
                     <motion.span

@@ -13,7 +13,7 @@ const pt: Translation = {
     aboutTitle: 'Quem somos',
     missionTitle: 'A nossa missão',
     valuesTitle: 'Os valores que nos movem',
-    servicesTitle: 'O que fazemos',
+    solutionsTitle: 'As nossas soluções',
     pillarsTitle: 'Os nossos pilares',
     clientsTitle: 'Os nossos clientes',
     openMenu: 'Abrir menu',
@@ -170,13 +170,29 @@ const pt: Translation = {
     },
     logistica: {
       title: 'Transporte e Logística',
-      summary: 'Armazenamento, procurement, aprovisionamento, downstream e importação, com eficiência em toda a cadeia.',
+      summary: 'Transporte terrestre, marítimo e aéreo, armazenagem, aprovisionamento, downstream e importação, com eficiência em toda a cadeia.',
       description:
-        'Integramos as várias etapas da cadeia logística para garantir eficiência do início ao fim de cada operação.',
+        'Soluções logísticas integradas para transporte terrestre, marítimo e aéreo, com eficiência, segurança e alcance global. Integramos as várias etapas da cadeia para garantir eficiência do início ao fim de cada operação.',
       features: [
         {
-          title: 'Armazenamento',
-          description: 'Mercadorias guardadas e organizadas com segurança.',
+          title: 'Transporte terrestre',
+          description: 'Soluções eficientes e seguras em todo o território.',
+        },
+        {
+          title: 'Transporte marítimo',
+          description: 'Conectamos portos e pessoas com segurança.',
+        },
+        {
+          title: 'Transporte aéreo',
+          description: 'Agilidade e rapidez para ligar o seu negócio ao mundo.',
+        },
+        {
+          title: 'Armazenagem e distribuição',
+          description: 'Mercadorias guardadas, organizadas e distribuídas com segurança e tecnologia.',
+        },
+        {
+          title: 'Logística integrada',
+          description: 'Soluções completas e personalizadas para a sua cadeia logística.',
         },
         {
           title: 'Procurement',
@@ -184,15 +200,19 @@ const pt: Translation = {
         },
         {
           title: 'Aprovisionamento',
-          description: 'Materiais e produtos disponíveis quando a sua operação precisa deles.',
+          description: 'Gestão estratégica do fornecimento, com materiais disponíveis quando a sua operação precisa deles.',
         },
         {
           title: 'Downstream',
-          description: 'Apoio às etapas finais da cadeia, até o produto chegar ao destino.',
+          description: 'Soluções no segmento de derivados de petróleo e lubrificantes, até ao destino final.',
         },
         {
           title: 'Importação',
           description: 'Entrada de mercadorias no país, com acompanhamento do processo.',
+        },
+        {
+          title: 'Rastreamento e segurança',
+          description: 'Monitorização em tempo real para total segurança da sua carga.',
         },
       ],
     },

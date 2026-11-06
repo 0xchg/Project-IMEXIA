@@ -49,7 +49,7 @@ export interface ServiceText {
 
 export interface Service extends ServiceText {
   id: ServiceId
-  image: string
+  photo?: string
 }
 
 export interface Labels {
@@ -64,7 +64,7 @@ export interface Labels {
   aboutTitle: string
   missionTitle: string
   valuesTitle: string
-  servicesTitle: string
+  solutionsTitle: string
   pillarsTitle: string
   clientsTitle: string
   openMenu: string

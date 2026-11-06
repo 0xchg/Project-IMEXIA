@@ -1,5 +1,21 @@
 import {
   Award,
+  BedDouble,
+  ClipboardCheck,
+  CloudCog,
+  Container,
+  Droplet,
+  MonitorSmartphone,
+  Radar,
+  Route,
+  Ship,
+  ShoppingCart,
+  SquareCode,
+  Stamp,
+  Ticket,
+  Warehouse,
+  Wrench,
+  Map as MapIcon,
   ChartNoAxesColumnIncreasing,
   CircleCheckBig,
   Cpu,
@@ -38,4 +54,11 @@ export const heroStrengthIcons: Record<ServiceId, LucideIcon[]> = {
   logistica: [Globe, ShieldCheck, ChartNoAxesColumnIncreasing, Users],
   software: [Sparkles, Share2, Shield, TrendingUp],
   viagens: [Package, Headset, CircleCheckBig, Plane],
+}
+
+// in the order of each area's features in the language files
+export const featureIcons: Record<ServiceId, LucideIcon[]> = {
+  logistica: [Truck, Ship, Plane, Warehouse, Route, ShoppingCart, ClipboardCheck, Droplet, Container, Radar],
+  software: [SquareCode, MonitorSmartphone, CloudCog, Wrench],
+  viagens: [Ticket, BedDouble, MapIcon, Stamp],
 }
